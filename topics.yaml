@@ -1,21 +1,59 @@
-# Expanded View topic queue — in priority order. Scheduled runs take the first `status: queued`.
-# status: queued | in_progress | needs_review | scheduled | published
-# angle = suggested hook / story; verify every fact during research.
-# Mix of cars and everyday machines on purpose: the channel is "how things actually work", not only engines.
+# Expanded View topic queue, in priority order. Scheduled runs take the first `status: queued`.
+# status: queued | in_progress | needs_review | ready | scheduled | published
+# Ordered for the monetization goal (see PLAYBOOK "GOAL"): topics with proven Shorts demand first
+# (vidIQ breakout Shorts, Oct 2026: manual gearbox, combustion/4-stroke, pile driver, "where does gas go",
+# sewing machine, pumpjack, clutch, engine oil, landing gear, crane, radial engine, garbage truck).
+# The weekly review re-orders this list toward what performs on our own channel. Verify every fact.
+
 
 - slug: vtec
   topic: VTEC
-  status: published          # YouTube posted manually 2026-10-29; TikTok 2026-10-29 19:44 (no AI label)
+  status: published
 
 - slug: turbocharger
   topic: TURBO
-  status: scheduled          # YouTube + TikTok 2026-10-30 10:00
+  status: scheduled
   angle: "Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost."
 
 - slug: manual-gearbox
   topic: SYNCHROS
   status: queued
   angle: "\"Every gear in your manual gearbox is spinning all the time. So what does the shifter actually move?\" Constant-mesh gears freewheel on the shaft; dog collar + synchro cone match speeds and lock one gear."
+
+- slug: four-stroke
+  topic: FOUR STROKES
+  status: queued
+  angle: "What actually happens inside your engine cylinder, thousands of times a minute. Intake, compression, power, exhaust; crank turns twice per cycle, cam at half speed."
+
+- slug: pile-driver
+  topic: DIESEL HAMMER
+  status: queued
+  angle: "How do you drive a giant steel pile into the ground? A diesel pile hammer: falling ram compresses air, fuel ignites, the blast drives the pile down and throws the ram back up. Verify the cycle carefully."
+
+- slug: fuel-system
+  topic: FUEL SYSTEM
+  status: queued
+  angle: "Where does gasoline go after you fill up? Tank -> in-tank pump -> filter -> fuel rail -> injectors spraying into each cylinder, timed by the computer."
+
+- slug: sewing-machine
+  topic: LOCKSTITCH
+  status: queued
+  angle: "A sewing machine ties a knot you never see. The needle pushes a loop of thread down, a spinning hook grabs it and wraps it around the bobbin, then the thread is pulled tight."
+
+- slug: pumpjack
+  topic: PUMPJACK
+  status: queued
+  angle: "Why oil fields are full of nodding machines. Motor + crank + walking beam -> sucker rods -> downhole pump with two check valves lifting oil each stroke."
+
+- slug: clutch
+  topic: THE CLUTCH
+  status: queued
+  angle: "What your clutch pedal actually does: a diaphragm spring clamps the friction disc between flywheel and pressure plate; the pedal pulls the plate away to disconnect the engine."
+
+- slug: engine-oil
+  topic: OIL SYSTEM
+  status: queued
+  angle: "How oil reaches every moving part of your engine: sump -> pickup -> pump -> filter -> main gallery -> crank bearings, cams, back to the sump."
 
 - slug: differential
   topic: THE DIFFERENTIAL
@@ -27,45 +65,40 @@
   status: queued
   angle: "\"Your key doesn't push anything open. It lines up a crack.\" Key pins + driver pins + springs; shear line; why a wrong key binds."
 
+- slug: landing-gear
+  topic: LANDING GEAR
+  status: queued
+  angle: "How a plane folds its wheels away: hydraulic actuator swings the strut into the wheel well, an uplock catches it; for landing, gravity plus hydraulics bring it down and a downlock holds it."
+
 - slug: jet-engine
   topic: THE TURBOFAN
   status: queued
   angle: "\"Most of a jet engine's thrust never touches fire.\" Fan, bypass air, compressor, combustor, turbine driving shafts."
+
+- slug: tower-crane
+  topic: CLIMBING CRANE
+  status: queued
+  angle: "How a tower crane makes itself taller: a hydraulic climbing frame lifts the top, the crane slides in a new mast section, then bolts it in."
+
+- slug: radial-engine
+  topic: RADIAL ENGINE
+  status: queued
+  angle: "Why old planes had engines shaped like stars: cylinders around one crank, a master rod and link rods, odd number of cylinders so firing alternates."
+
+- slug: garbage-truck
+  topic: COMPACTOR
+  status: queued
+  angle: "What happens to your trash inside a garbage truck: the packer blade sweeps it in and a hydraulic panel crushes it toward the front; ejector plate empties it at the dump."
 
 - slug: cvt
   topic: CVT
   status: queued
   angle: "\"A transmission with no gears at all.\" Two variable-width pulleys + steel push belt; ratio changes continuously; why it feels like a rubber band."
 
-- slug: four-stroke
-  topic: FOUR STROKES
-  status: queued
-  angle: "\"Your engine only makes power one stroke out of four.\" Intake, compression, power, exhaust; crank, cam at half speed."
-
-- slug: jake-brake
-  topic: JAKE BRAKE
-  status: queued
-  angle: "\"That machine-gun sound from trucks going downhill is the engine braking itself.\" Compression release: exhaust valve opens near TDC so the compressed air isn't returned."
-
 - slug: abs
   topic: ABS
   status: queued
   angle: "\"Slamming the brakes used to be the worst thing you could do.\" Wheel speed sensors, modulator valves pulsing pressure, steering control."
-
-- slug: zipper
-  topic: THE ZIPPER
-  status: queued
-  angle: "\"The slider never touches the teeth you see lock.\" Y-shaped channel wedges hooked teeth into each other's hollows."
-
-- slug: torque-converter
-  topic: TORQUE CONVERTER
-  status: queued
-  angle: "\"How an automatic car sits still in drive without stalling.\" Impeller, turbine, stator; fluid coupling; lock-up clutch."
-
-- slug: fuel-gauge
-  topic: FUEL GAUGE
-  status: queued
-  angle: "\"Your fuel gauge is lying to you, on purpose.\" Float + variable resistor sender; damping; why it sits on full."
 
 - slug: disc-brakes
   topic: DISC BRAKES
@@ -77,20 +110,35 @@
   status: queued
   angle: "\"The ticking is a tiny brake letting go five times a second.\" Mainspring, gear train, escape wheel, pallet fork, balance wheel."
 
+- slug: zipper
+  topic: THE ZIPPER
+  status: queued
+  angle: "\"The slider never touches the teeth you see lock.\" Y-shaped channel wedges hooked teeth into each other's hollows."
+
+- slug: torque-converter
+  topic: TORQUE CONVERTER
+  status: queued
+  angle: "\"How an automatic car sits still in drive without stalling.\" Impeller, turbine, stator; fluid coupling; lock-up clutch."
+
 - slug: supercharger
   topic: SUPERCHARGER
   status: queued
   angle: "\"Boost with no lag, paid for with the engine's own power.\" Belt-driven roots/twin-screw vs centrifugal; compare to turbo."
 
-- slug: wastegate
-  topic: WASTEGATE
-  status: queued
-  angle: "\"The valve that stops a turbo from destroying the engine.\" Actuator diaphragm vs spring, boost reference, bypass flap; electronic wastegates."
-
 - slug: rotary-engine
   topic: THE ROTARY
   status: queued
   angle: "\"An engine with no pistons going up and down.\" Triangular rotor, eccentric shaft, epitrochoid housing, three chambers."
+
+- slug: jake-brake
+  topic: JAKE BRAKE
+  status: queued
+  angle: "\"That machine-gun sound from trucks going downhill is the engine braking itself.\" Compression release: exhaust valve opens near TDC so the compressed air isn't returned."
+
+- slug: fuel-gauge
+  topic: FUEL GAUGE
+  status: queued
+  angle: "\"Your fuel gauge is lying to you, on purpose.\" Float + variable resistor sender; damping; why it sits on full."
 
 - slug: timing-belt
   topic: INTERFERENCE ENGINES
@@ -131,3 +179,8 @@
   topic: THE FLUSH
   status: queued
   angle: "\"A toilet is a siphon you start on purpose.\" Trapway siphon, flapper, fill valve and float."
+
+- slug: wastegate
+  topic: WASTEGATE
+  status: queued
+  angle: "\"The valve that stops a turbo from destroying the engine.\" Actuator diaphragm vs spring, boost reference, bypass flap; electronic wastegates."

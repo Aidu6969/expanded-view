@@ -8,6 +8,39 @@ Owner: Ahadu. He reviews posts during a 3-hour cancel window. Never post anythin
 defend as accurate.
 
 ---------------------------------------------------------------------------------------------------
+## GOAL: get Expanded View into both paid programs. Every decision serves this.
+Targets (checked Oct 2026; re-check monthly):
+- **YouTube Partner Program (ad revenue):** 1,000 subscribers + 10M public Shorts views in 90 days
+  (or 4,000 long-form watch hours in 12 months). **From Feb 1, 2027 new applicants need 20M Shorts
+  views in 90 days (or 8,000 hours)**; channels already accepted are grandfathered. So: qualify before
+  Feb 1, 2027 if at all possible. After that date Shorts ad revenue also needs 10M Shorts views/90 days.
+  Lower YPP tier (fan funding, no ad revenue): 500 subs + 3 uploads in 90 days + 3M Shorts views/90 days.
+- **TikTok Creator Rewards:** 10,000 followers + 100,000 views in the last 30 days, personal account,
+  18+, original videos over 1 minute. Pay per 1,000 qualified views depends on **originality, play
+  duration, search value and audience engagement**: optimise all four.
+- **The biggest risk is YouTube's "inauthentic content" policy** (clarified July 2026): channels whose
+  videos look template-made "with little to no variation" are refused or demonetised. Our fixed brand
+  (voice, look, ending) is fine; the SUBSTANCE must differ every time. The YPP review is done by people
+  looking at the whole channel, so every upload must be one you would show a reviewer.
+
+What that means for each run:
+1. **Topic:** pick things people already search for and watch (topics.yaml is ordered by proven demand).
+2. **Hook (first 2 s):** motion on screen from frame 1 plus a concrete, surprising claim or question
+   ("How do you drive a 50-ton steel pile into the ground?"). Never open on a slow fade or a definition.
+3. **Retention:** a new visual event every 2–3 s; reveal the key moment late enough to hold viewers; no
+   dead air; the 61–75 s length is required for TikTok pay, so it must earn every second.
+4. **Originality (both platforms):** a custom-modelled animation of THIS mechanism, a script with real
+   explanation (the why, not a list of parts), a hook and visual structure that differ from the last
+   5 episodes (check `published.yaml` + their episode.py). Never reuse another channel's footage,
+   script, title or exact hook.
+5. **Search value:** the YouTube title and TikTok caption contain the phrase people actually search
+   ("how a manual transmission works"), plus curiosity. Say that phrase early in the narration too.
+6. **Engagement:** YouTube first comment asks a real question (pick-the-next-topic works); the
+   description ends with a question.
+7. **Quality over count:** two a day only while every video passes the QA gate. A skipped day costs
+   less than a weak upload sitting on the channel when a reviewer looks.
+
+---------------------------------------------------------------------------------------------------
 ## 0. Fixed brand — NEVER change per episode
 - **Voice:** `ev/voice.py` (Kokoro `am_michael`, speed 1.0). Never speed it up; never swap voices.
 - **Look:** dark navy blueprint grid, 3/4 orthographic 3D mechanisms (`ev/gfx.py`), Poppins/Inter type,
