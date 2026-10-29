@@ -10,124 +10,124 @@
 - slug: turbocharger
   topic: TURBO
   status: scheduled          # YouTube + TikTok 2026-10-30 10:00
-  angle: Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost.
+  angle: "Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost."
 
 - slug: manual-gearbox
   topic: SYNCHROS
   status: queued
-  angle: "Every gear in your manual gearbox is spinning all the time. So what does the shifter actually move?" Constant-mesh gears freewheel on the shaft; dog collar + synchro cone match speeds and lock one gear.
+  angle: "\"Every gear in your manual gearbox is spinning all the time. So what does the shifter actually move?\" Constant-mesh gears freewheel on the shaft; dog collar + synchro cone match speeds and lock one gear."
 
 - slug: differential
   topic: THE DIFFERENTIAL
   status: queued
-  angle: "Your wheels travel different distances in every corner." Open diff: ring gear, carrier, spider gears; the one-wheel-spin weakness; tease limited slip.
+  angle: "\"Your wheels travel different distances in every corner.\" Open diff: ring gear, carrier, spider gears; the one-wheel-spin weakness; tease limited slip."
 
 - slug: pin-tumbler-lock
   topic: PIN TUMBLERS
   status: queued
-  angle: "Your key doesn't push anything open. It lines up a crack." Key pins + driver pins + springs; shear line; why a wrong key binds.
+  angle: "\"Your key doesn't push anything open. It lines up a crack.\" Key pins + driver pins + springs; shear line; why a wrong key binds."
 
 - slug: jet-engine
   topic: THE TURBOFAN
   status: queued
-  angle: "Most of a jet engine's thrust never touches fire." Fan, bypass air, compressor, combustor, turbine driving shafts.
+  angle: "\"Most of a jet engine's thrust never touches fire.\" Fan, bypass air, compressor, combustor, turbine driving shafts."
 
 - slug: cvt
   topic: CVT
   status: queued
-  angle: "A transmission with no gears at all." Two variable-width pulleys + steel push belt; ratio changes continuously; why it feels like a rubber band.
+  angle: "\"A transmission with no gears at all.\" Two variable-width pulleys + steel push belt; ratio changes continuously; why it feels like a rubber band."
 
 - slug: four-stroke
   topic: FOUR STROKES
   status: queued
-  angle: "Your engine only makes power one stroke out of four." Intake, compression, power, exhaust; crank, cam at half speed.
+  angle: "\"Your engine only makes power one stroke out of four.\" Intake, compression, power, exhaust; crank, cam at half speed."
 
 - slug: jake-brake
   topic: JAKE BRAKE
   status: queued
-  angle: "That machine-gun sound from trucks going downhill is the engine braking itself." Compression release: exhaust valve opens near TDC so the compressed air isn't returned.
+  angle: "\"That machine-gun sound from trucks going downhill is the engine braking itself.\" Compression release: exhaust valve opens near TDC so the compressed air isn't returned."
 
 - slug: abs
   topic: ABS
   status: queued
-  angle: "Slamming the brakes used to be the worst thing you could do." Wheel speed sensors, modulator valves pulsing pressure, steering control.
+  angle: "\"Slamming the brakes used to be the worst thing you could do.\" Wheel speed sensors, modulator valves pulsing pressure, steering control."
 
 - slug: zipper
   topic: THE ZIPPER
   status: queued
-  angle: "The slider never touches the teeth you see lock." Y-shaped channel wedges hooked teeth into each other's hollows.
+  angle: "\"The slider never touches the teeth you see lock.\" Y-shaped channel wedges hooked teeth into each other's hollows."
 
 - slug: torque-converter
   topic: TORQUE CONVERTER
   status: queued
-  angle: "How an automatic car sits still in drive without stalling." Impeller, turbine, stator; fluid coupling; lock-up clutch.
+  angle: "\"How an automatic car sits still in drive without stalling.\" Impeller, turbine, stator; fluid coupling; lock-up clutch."
 
 - slug: fuel-gauge
   topic: FUEL GAUGE
   status: queued
-  angle: "Your fuel gauge is lying to you, on purpose." Float + variable resistor sender; damping; why it sits on full.
+  angle: "\"Your fuel gauge is lying to you, on purpose.\" Float + variable resistor sender; damping; why it sits on full."
 
 - slug: disc-brakes
   topic: DISC BRAKES
   status: queued
-  angle: "Your foot can't stop a two-ton car. Hydraulics multiply it." Master cylinder, pistons area ratio, caliper, pads clamping the rotor.
+  angle: "\"Your foot can't stop a two-ton car. Hydraulics multiply it.\" Master cylinder, pistons area ratio, caliper, pads clamping the rotor."
 
 - slug: mechanical-watch
   topic: THE ESCAPEMENT
   status: queued
-  angle: "The ticking is a tiny brake letting go five times a second." Mainspring, gear train, escape wheel, pallet fork, balance wheel.
+  angle: "\"The ticking is a tiny brake letting go five times a second.\" Mainspring, gear train, escape wheel, pallet fork, balance wheel."
 
 - slug: supercharger
   topic: SUPERCHARGER
   status: queued
-  angle: "Boost with no lag, paid for with the engine's own power." Belt-driven roots/twin-screw vs centrifugal; compare to turbo.
+  angle: "\"Boost with no lag, paid for with the engine's own power.\" Belt-driven roots/twin-screw vs centrifugal; compare to turbo."
 
 - slug: wastegate
   topic: WASTEGATE
   status: queued
-  angle: "The valve that stops a turbo from destroying the engine." Actuator diaphragm vs spring, boost reference, bypass flap; electronic wastegates.
+  angle: "\"The valve that stops a turbo from destroying the engine.\" Actuator diaphragm vs spring, boost reference, bypass flap; electronic wastegates."
 
 - slug: rotary-engine
   topic: THE ROTARY
   status: queued
-  angle: "An engine with no pistons going up and down." Triangular rotor, eccentric shaft, epitrochoid housing, three chambers.
+  angle: "\"An engine with no pistons going up and down.\" Triangular rotor, eccentric shaft, epitrochoid housing, three chambers."
 
 - slug: timing-belt
   topic: INTERFERENCE ENGINES
   status: queued
-  angle: "Why a snapped timing belt can wreck an engine in a second." Belt syncs crank and cams; valves and pistons share space.
+  angle: "\"Why a snapped timing belt can wreck an engine in a second.\" Belt syncs crank and cams; valves and pistons share space."
 
 - slug: refrigerator
   topic: THE FRIDGE
   status: queued
-  angle: "Your fridge doesn't make cold. It moves heat." Compressor, condenser, expansion valve, evaporator; refrigerant phase change.
+  angle: "\"Your fridge doesn't make cold. It moves heat.\" Compressor, condenser, expansion valve, evaporator; refrigerant phase change."
 
 - slug: hydraulic-jack
   topic: HYDRAULIC JACK
   status: queued
-  angle: "Lift a car with one hand." Pascal's principle; small piston vs big piston; check valves; release valve.
+  angle: "\"Lift a car with one hand.\" Pascal's principle; small piston vs big piston; check valves; release valve."
 
 - slug: starter-motor
   topic: STARTER MOTOR
   status: queued
-  angle: "The loudest half-second of your car's day." Solenoid throws the pinion into the flywheel, motor cranks, overrunning clutch.
+  angle: "\"The loudest half-second of your car's day.\" Solenoid throws the pinion into the flywheel, motor cranks, overrunning clutch."
 
 - slug: limited-slip
   topic: LIMITED SLIP
   status: queued
-  angle: "The fix for one-wheel peel." Clutch-pack LSD preload, torque bias vs open diff.
+  angle: "\"The fix for one-wheel peel.\" Clutch-pack LSD preload, torque bias vs open diff."
 
 - slug: planetary-gearset
   topic: PLANETARY GEARS
   status: queued
-  angle: "Three ways out of one set of gears." Sun, planets, ring, carrier; holding one member gives different ratios.
+  angle: "\"Three ways out of one set of gears.\" Sun, planets, ring, carrier; holding one member gives different ratios."
 
 - slug: bike-derailleur
   topic: DERAILLEUR
   status: queued
-  angle: "How a chain jumps gears while you pedal." Parallelogram, cable tension, ramps and pins on the cassette.
+  angle: "\"How a chain jumps gears while you pedal.\" Parallelogram, cable tension, ramps and pins on the cassette."
 
 - slug: toilet-flush
   topic: THE FLUSH
   status: queued
-  angle: "A toilet is a siphon you start on purpose." Trapway siphon, flapper, fill valve and float.
+  angle: "\"A toilet is a siphon you start on purpose.\" Trapway siphon, flapper, fill valve and float."
