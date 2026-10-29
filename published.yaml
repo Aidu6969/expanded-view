@@ -7,10 +7,11 @@
 - slug: vtec
   date: 2026-10-29
   platform: tiktok
-  scheduled: "2026-10-29T19:35"
+  scheduled: "2026-10-29T19:44"
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/main/media/2026-10-29-vtec.mp4
-  metricool_id: 410659931
-  uuid: "1533696765059350906"
+  metricool_id: 410665319
+  uuid: "-6166088792418793568"
+  note: reposted without the AI label (first post at 19:35 had it; owner deleted it)
 - slug: turbocharger
   date: 2026-10-29
   platform: youtube
