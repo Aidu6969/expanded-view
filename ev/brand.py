@@ -269,13 +269,15 @@ def note(cv, text, a, dy=0.0):
     draw_text(cv, text, 870, 354 + dy, font("inter_sb", 19), MUTED, a=a, align="right", tracking=2)
 
 
-def chips(cv, k, y, items, lead=None):
+def chips(cv, k, y, items, lead=None, x=70, center=False):
     """Row of check-chips. items: [(name, ok 0..1)]; lead: (text, on 0..1) badge at the start.
-    Returns the lead badge's (x0, width, height) or None."""
+    center=True centres the row (no lead) on the screen. Returns the lead badge's (x0, width, height) or None."""
     if k <= 0:
         return None
     f = font("inter_xb", 26)
-    x = 70
+    if center and not lead:
+        tot = sum(text_w(n, f, 1.5) + 70 for n, _ in items) + 10 * (len(items) - 1)
+        x = (W - tot) / 2
     lead_box = None
     if lead:
         on = lead[1]

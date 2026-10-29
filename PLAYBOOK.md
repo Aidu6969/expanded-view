@@ -35,7 +35,9 @@ defend as accurate.
    which networks are connected; post only to connected ones (YouTube is; TikTok once the owner links it).
 
 ## 2. Pick the topic
-Open `topics.yaml`. Take the first entry with `status: queued` (it is in priority order). Skip any
+Open `topics.yaml`. If an entry has `status: ready` (already built and checked), skip to step 8 and post
+it: rebuild it with `python -m ev.build episodes/<slug>` first (the `out/` folder is not in the repo).
+Otherwise take the first entry with `status: queued` (it is in priority order). Skip any
 topic already in `published.yaml`. Set its status to `in_progress` in your working copy.
 **Backfill first:** if TikTok is connected and an entry in `topics.yaml` has a `note` saying it still
 needs posting to TikTok (VTEC), schedule that existing video to TikTok too (step 8, TikTok only, using
@@ -75,6 +77,10 @@ Scaffold with `python tools/new_episode.py <slug>`, then write the scene. Rules:
   `brand.status_pill` + `brand.readout` for a changing state/quantity; a graph (`brand.graph_box`,
   `brand.curve`, `brand.dot`) when a curve explains the idea; `brand.panel`/`brand.bullet` for
   comparisons; `brand.acronym_rows` for acronyms; `brand.gauge`/`brand.lamp` for hooks.
+- Second reference: `episodes/turbocharger/scene.py` (flows through pipes, spinning bladed wheels, a
+  4-stroke cylinder, x-ray housings). Reusable parts live in `ev/parts.py`: `rev` (shafts, hubs, housings,
+  pistons: any round part), `wheel` (fans/compressors/turbines), `pipe` + `flow` (anything that flows:
+  air, gas, oil, coolant, current), `spline`, `ring_front`. Add new generic parts there, not in an episode.
 - 3D: `Proj(ox, oy, s)` (ortho 3/4 view: X = along the part, Y = down, z = depth/axis), `extrude`
   for prisms (gears, lobes, levers, housings), `vcyl`/`frustum` for vertical round parts,
   `draw_spring`, `zhelix`, `hcircle`. Painter's order: draw far (large z / large -X) first.

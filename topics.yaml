@@ -10,9 +10,8 @@
 
 - slug: turbocharger
   topic: TURBO
-  status: queued
-  angle: "Your engine throws away a third of its fuel energy as hot exhaust. A turbo catches it." Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost.
-  source_hint: poll option on episode 1 (Turbocharger vs Manual gearbox)
+  status: ready              # built + QA'd 2026-10-29 (episodes/turbocharger); post it first: steps 8-9 only
+  angle: Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost.
 
 - slug: manual-gearbox
   topic: SYNCHROS
