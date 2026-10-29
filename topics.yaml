@@ -5,12 +5,11 @@
 
 - slug: vtec
   topic: VTEC
-  status: published          # YouTube posted manually 2026-10-29; TikTok not yet posted
-  note: still needs posting to TikTok. Video: https://raw.githubusercontent.com/Aidu6969/expanded-view/main/media/2026-10-29-vtec.mp4 (META in episodes/vtec/episode.py)
+  status: published          # YouTube posted manually 2026-10-29; TikTok scheduled 2026-10-29 22:40
 
 - slug: turbocharger
   topic: TURBO
-  status: ready              # built + QA'd 2026-10-29 (episodes/turbocharger); post it first: steps 8-9 only
+  status: scheduled          # YouTube + TikTok 2026-10-30 10:00
   angle: Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost.
 
 - slug: manual-gearbox

@@ -134,10 +134,12 @@ notify the owner with the reason.
       "providers": [{"network": "tiktok"}], "media": ["<raw URL>"],
       "publicationDate": {"dateTime": "<slot dateTime>", "timezone": "America/New_York"},
       "text": "<META.tiktok_caption>",
-      "tiktokData": {"privacyOption": "PUBLIC_TO_EVERYONE", "disableComment": false, "disableDuet": false,
+      "tiktokData": {"title": "<META.tiktok_caption>", "privacyOption": "PUBLIC_TO_EVERYONE", "disableComment": false, "disableDuet": false,
                      "disableStitch": false, "commercialContentThirdParty": false,
                      "commercialContentOwnBrand": false, "autoAddMusic": false, "isAigc": true}}
      ```
+   TikTok rejects the post without `tiktokData.title` (use the caption). Metricool copies the video to its
+   own storage when the post is created, so the `media` branch only has to serve it at scheduling time.
    AI labels are ON because the narration voice is synthetic: honest, and both platforms ask for it.
    Do not send `videoThumbnailUrl`/`videoCoverMilliseconds` (rejected on this channel).
    If a call errors, read the error, fix the field it names, retry once; never change the wording of

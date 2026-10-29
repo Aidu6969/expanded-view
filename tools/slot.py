@@ -1,9 +1,9 @@
 """Print the publish time for the next post (America/New_York).
 
 Rule: the next 10:00 or 16:00 slot (Metricool's best YouTube hours for this channel) that is at least
-3 hours from now (the owner's cancel window) and not already used in published.yaml. If that slot is
-more than 6 hours past the 3-hour mark (a late run), use now + 3 h rounded up to 5 minutes instead,
-so a late run never pushes the queue into tomorrow.
+3 hours from now (the owner's cancel window) and not already used in published.yaml. If even the next
+slot is more than 6 hours past the 3-hour mark (a late run), use now + 3 h rounded up to 5 minutes
+(daytime only), so a late run does not wait until tomorrow.
 
     python tools/slot.py            ->  {"dateTime": "2026-10-30T10:00:00", "timezone": "America/New_York",
                                          "iso": "2026-10-30T10:00:00-04:00"}
@@ -34,13 +34,13 @@ def next_slot(now=None, used=None):
     used = taken() if used is None else used
     earliest = now + timedelta(hours=3)
     cands = [datetime.combine((now + timedelta(days=d)).date(), s, tzinfo=NY) for d in range(5) for s in SLOTS]
-    first = next(c for c in cands if c >= earliest and c.strftime("%Y-%m-%dT%H:%M") not in used)
-    if first - earliest <= timedelta(hours=6):
-        return first
+    later = [c for c in cands if c >= earliest]
+    first_free = next(c for c in later if c.strftime("%Y-%m-%dT%H:%M") not in used)
+    if later[0] - earliest <= timedelta(hours=6):
+        return first_free                      # normal run: next free slot (taken slots are skipped)
     fb = earliest.replace(minute=0, second=0, microsecond=0) + timedelta(minutes=(earliest.minute // 5 + 1) * 5)
-    # a late run posts at now+3h, but never in the middle of the night
-    return fb if 8 <= fb.hour < 21 else first
-
+    # a late run posts at now+3h instead of waiting until tomorrow, but never in the middle of the night
+    return fb if 8 <= fb.hour < 21 else first_free
 
 def main():
     c = next_slot()

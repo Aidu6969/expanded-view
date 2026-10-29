@@ -4,3 +4,25 @@
   platform: youtube
   title: "What happens when VTEC kicks in? #honda #jdm #engineering"
   how: uploaded manually from the YouTube app
+- slug: vtec
+  date: 2026-10-29
+  platform: tiktok
+  scheduled: "2026-10-29T22:40"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/main/media/2026-10-29-vtec.mp4
+  metricool_id: 410658265
+  uuid: "1533696765059350906"
+- slug: turbocharger
+  date: 2026-10-29
+  platform: youtube
+  scheduled: "2026-10-30T10:00"
+  title: "How a turbo turns exhaust into power #turbo #cars #engineering"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-29-turbocharger.mp4
+  metricool_id: 410658072
+  uuid: "-3284310736826839672"
+- slug: turbocharger
+  date: 2026-10-29
+  platform: tiktok
+  scheduled: "2026-10-30T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-29-turbocharger.mp4
+  metricool_id: 410658234
+  uuid: "-1963474308812157712"
