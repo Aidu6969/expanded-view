@@ -125,7 +125,7 @@ notify the owner with the reason.
       "publicationDate": {"dateTime": "<slot dateTime>", "timezone": "America/New_York"},
       "text": "<META.description>", "firstCommentText": "<META.first_comment>",
       "youtubeData": {"title": "<META.title>", "type": "short", "privacy": "public", "tags": [<META.tags>],
-                      "category": "SCIENCE_TECHNOLOGY", "madeForKids": false, "isAiGeneratedContent": true}}
+                      "category": "SCIENCE_TECHNOLOGY", "madeForKids": false, "isAiGeneratedContent": false}}
      ```
    - TikTok (only if connected):
      ```json
@@ -136,11 +136,15 @@ notify the owner with the reason.
       "text": "<META.tiktok_caption>",
       "tiktokData": {"title": "<META.tiktok_caption>", "privacyOption": "PUBLIC_TO_EVERYONE", "disableComment": false, "disableDuet": false,
                      "disableStitch": false, "commercialContentThirdParty": false,
-                     "commercialContentOwnBrand": false, "autoAddMusic": false, "isAigc": true}}
+                     "commercialContentOwnBrand": false, "autoAddMusic": false, "isAigc": false}}
      ```
    TikTok rejects the post without `tiktokData.title` (use the caption). Metricool copies the video to its
    own storage when the post is created, so the `media` branch only has to serve it at scheduling time.
-   AI labels are ON because the narration voice is synthetic: honest, and both platforms ask for it.
+   AI labels are OFF (owner's decision). That is within both platforms' rules only because the videos are
+   clearly animated and the narrator is a generic voice: YouTube requires disclosure only for realistic
+   content (real people saying/doing things they didn't, realistic events, AI music as the focus); TikTok
+   for realistic AI people/scenes or a recognisable person's voice. Never use realistic footage of real
+   people or events, cloned voices or AI music. If a topic would need any of that, skip it.
    Do not send `videoThumbnailUrl`/`videoCoverMilliseconds` (rejected on this channel).
    If a call errors, read the error, fix the field it names, retry once; never change the wording of
    the text to get around an error.
