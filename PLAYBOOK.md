@@ -58,8 +58,10 @@ What that means for each run:
 
 ---------------------------------------------------------------------------------------------------
 ## 1. Setup (fresh workspace every run)
-1. Attach the repo: `mcp__claude-code-remote__add_repo` with owner `Aidu6969`, repo `expanded-view`,
-   access `push`; run the clone command it returns; `cd` into it.
+1. Attach the repos with `mcp__claude-code-remote__add_repo` (access `push`): first owner `Aidu6969`,
+   repo `expanded-view` (PRIVATE engine repo: run the clone command it returns and `cd` into it), then
+   repo `expanded-view-media` (PUBLIC, videos only: attach it, no need to clone; `tools/publish_media.sh`
+   pushes to it).
 2. `bash setup.sh` (Python deps, voice model; brand fonts are bundled in `ev/fonts`).
 3. Read `ev/brand.py`, the function list of `ev/gfx.py`, and `episodes/vtec/scene.py` before writing
    a new scene.
@@ -144,8 +146,9 @@ notify the owner with the reason.
 1. Commit the episode folder (`episode.py`, `scene.py`, `research.md`, any model file) and the updated
    `topics.yaml` to `main`; push.
 2. Host the video: `bash tools/publish_media.sh out/<slug>/<slug>.mp4 <YYYY-MM-DD>-<slug>.mp4`.
-   It force-pushes the `media` branch (last 4 days of videos only) and prints the public URL
-   `https://raw.githubusercontent.com/Aidu6969/expanded-view/media/<file>.mp4`, checking it returns 200.
+   It force-pushes the video to the public repo `Aidu6969/expanded-view-media` (last 4 days of videos
+   only) and prints the public URL `https://raw.githubusercontent.com/Aidu6969/expanded-view-media/main/<file>.mp4`,
+   checking it returns 200. Never put anything but finished videos in that repo.
 3. Time: `python tools/slot.py` → next 10:00 / 16:00 New York slot at least 3 h away (the owner's
    cancel window). Never schedule sooner than now + 3 h.
 4. Schedule with `createScheduledPost` (blogId `7744824`, `date` = the slot's `iso`). Make **two
