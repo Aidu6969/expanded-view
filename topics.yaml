@@ -16,8 +16,9 @@
   angle: "Exhaust spins turbine -> shared shaft -> compressor packs air -> intercooler -> wastegate bleeds boost."
 
 - slug: manual-gearbox
-  topic: SYNCHROS
-  status: queued
+  topic: GEARBOX
+  status: ready
+  note: "Built + QA passed 2026-10-30 (74.1 s, -14.2 LUFS). NOT posted: media repo Aidu6969/expanded-view-media could not be attached to the run (add_repo tool missing; git proxy 403). Next run: rebuild and post this first."
   angle: "\"Every gear in your manual gearbox is spinning all the time. So what does the shifter actually move?\" Constant-mesh gears freewheel on the shaft; dog collar + synchro cone match speeds and lock one gear."
 
 - slug: four-stroke
