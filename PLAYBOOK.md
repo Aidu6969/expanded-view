@@ -183,7 +183,9 @@ notify the owner with the reason.
    people or events, cloned voices or AI music. If a topic would need any of that, skip it.
    Do not send `videoThumbnailUrl`/`videoCoverMilliseconds` (rejected on this channel).
    If a call errors, read the error, fix the field it names, retry once; never change the wording of
-   the text to get around an error.
+   the text to get around an error. If the error is about the Metricool plan's post limit (the Free plan
+   allows 20 posts a month; each platform post counts), do not retry: keep the video, set the topic to
+   `ready`, and tell the owner the monthly limit was reached.
 5. Verify with `getScheduledPosts` (that day, America/New_York) that both posts are there with
    autoPublish on. Keep each post's `plannerUrl`.
 6. Append to `published.yaml` one entry per post: slug, date, platform, `scheduled` (slot dateTime),
