@@ -61,7 +61,9 @@ What that means for each run:
 1. Attach the repos with `mcp__claude-code-remote__add_repo` (access `push`): first owner `Aidu6969`,
    repo `expanded-view` (PRIVATE engine repo: run the clone command it returns and `cd` into it), then
    repo `expanded-view-media` (PUBLIC, videos only: attach it, no need to clone; `tools/publish_media.sh`
-   pushes to it).
+   pushes to it). If `add_repo` is missing or the media repo can't be attached, carry on: the engine repo
+   is normally already cloned in the working directory, and `publish_media.sh` falls back automatically
+   (step 8.2). A missing media repo is NOT a reason to stop (owner decision, 2026-10-31).
 2. `bash setup.sh` (Python deps, voice model; brand fonts are bundled in `ev/fonts`).
 3. Read `ev/brand.py`, the function list of `ev/gfx.py`, and `episodes/vtec/scene.py` before writing
    a new scene.
@@ -149,6 +151,10 @@ notify the owner with the reason.
    It force-pushes the video to the public repo `Aidu6969/expanded-view-media` (last 4 days of videos
    only) and prints the public URL `https://raw.githubusercontent.com/Aidu6969/expanded-view-media/main/<file>.mp4`,
    checking it returns 200. Never put anything but finished videos in that repo.
+   **Fallback (automatic, owner-approved for autonomy):** if the media repo can't be reached, the script
+   pushes to the orphan `media` branch of `Aidu6969/expanded-view` instead and prints that URL
+   (`https://raw.githubusercontent.com/Aidu6969/expanded-view/media/<file>.mp4`). Use whatever URL it prints.
+   Only stop if the script fails or the printed URL is not HTTP 200.
 3. Time: `python tools/slot.py` → next 10:00 / 16:00 New York slot at least 3 h away (the owner's
    cancel window). Never schedule sooner than now + 3 h.
 4. Schedule with `createScheduledPost` (blogId `7744824`, `date` = the slot's `iso`). Make **two

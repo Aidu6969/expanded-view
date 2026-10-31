@@ -27,3 +27,20 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-29-turbocharger.mp4
   metricool_id: 410658234
   uuid: "-1963474308812157712"
+- slug: manual-gearbox
+  date: 2026-10-31
+  platform: youtube
+  scheduled: "2026-10-31T10:00"
+  title: "How a manual transmission works: every gear is always spinning #cars #manual #engineering"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-31-manual-gearbox.mp4
+  metricool_id: 411886484
+  uuid: "1623870880916458947"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=1623870880916458947
+- slug: manual-gearbox
+  date: 2026-10-31
+  platform: tiktok
+  scheduled: "2026-10-31T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-31-manual-gearbox.mp4
+  metricool_id: 411886490
+  uuid: "-6547256935845508052"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-6547256935845508052
