@@ -44,3 +44,20 @@
   metricool_id: 411886490
   uuid: "-6547256935845508052"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-6547256935845508052
+- slug: four-stroke
+  date: 2026-10-31
+  platform: youtube
+  scheduled: "2026-10-31T16:00"
+  title: "How a 4-stroke engine works, slowed way down #engine #cars #engineering"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-31-four-stroke.mp4
+  metricool_id: 411997850
+  uuid: "557475979595695952"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=557475979595695952
+- slug: four-stroke
+  date: 2026-10-31
+  platform: tiktok
+  scheduled: "2026-10-31T16:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-31-four-stroke.mp4
+  metricool_id: 411997857
+  uuid: "-7110661364332081450"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-7110661364332081450

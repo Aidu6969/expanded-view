@@ -22,7 +22,7 @@
 
 - slug: four-stroke
   topic: FOUR STROKES
-  status: in_progress
+  status: scheduled
   angle: "What actually happens inside your engine cylinder, thousands of times a minute. Intake, compression, power, exhaust; crank turns twice per cycle, cam at half speed."
 
 - slug: pile-driver
