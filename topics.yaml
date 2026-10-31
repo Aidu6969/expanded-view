@@ -27,7 +27,7 @@
 
 - slug: pile-driver
   topic: DIESEL HAMMER
-  status: queued
+  status: in_progress
   angle: "How do you drive a giant steel pile into the ground? A diesel pile hammer: falling ram compresses air, fuel ignites, the blast drives the pile down and throws the ram back up. Verify the cycle carefully."
 
 - slug: fuel-system
