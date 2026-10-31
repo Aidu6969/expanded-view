@@ -61,3 +61,20 @@
   metricool_id: 411997857
   uuid: "-7110661364332081450"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-7110661364332081450
+- slug: pile-driver
+  date: 2026-10-31
+  platform: youtube
+  scheduled: "2026-11-01T10:00"
+  title: "How a pile driver works: the hammer is an engine #construction #engineering #diesel"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-31-pile-driver.mp4
+  metricool_id: 412285334
+  uuid: "-4764328586774492992"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-4764328586774492992
+- slug: pile-driver
+  date: 2026-10-31
+  platform: tiktok
+  scheduled: "2026-11-01T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-10-31-pile-driver.mp4
+  metricool_id: 412285363
+  uuid: "8921350199196271245"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=8921350199196271245
