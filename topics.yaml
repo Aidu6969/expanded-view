@@ -37,7 +37,7 @@
 
 - slug: sewing-machine
   topic: LOCKSTITCH
-  status: in_progress
+  status: scheduled
   angle: "A sewing machine ties a knot you never see. The needle pushes a loop of thread down, a spinning hook grabs it and wraps it around the bobbin, then the thread is pulled tight."
 
 - slug: pumpjack

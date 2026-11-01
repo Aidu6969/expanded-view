@@ -95,3 +95,20 @@
   metricool_id: 412781739
   uuid: "1246669660851356485"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=1246669660851356485
+- slug: sewing-machine
+  date: 2026-11-01
+  platform: youtube
+  scheduled: "2026-11-02T10:00"
+  title: "How a sewing machine works: the knot you never see #sewing #howitworks #engineering"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-01-sewing-machine.mp4
+  metricool_id: 413111975
+  uuid: "-8703184870895432836"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-8703184870895432836
+- slug: sewing-machine
+  date: 2026-11-01
+  platform: tiktok
+  scheduled: "2026-11-02T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-01-sewing-machine.mp4
+  metricool_id: 413111990
+  uuid: "1342769671638827808"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=1342769671638827808
