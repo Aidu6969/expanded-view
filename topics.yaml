@@ -1,5 +1,7 @@
 # Expanded View topic queue, in priority order. Scheduled runs take the first `status: queued`.
-# status: queued | in_progress | needs_review | ready | scheduled | published
+# SCOPE (owner, 2026-11-01): vehicles only — cars and anything with an engine or wheels (trucks, planes,
+# bikes). No household, industrial or other non-vehicle topics. `parked` entries are out of scope: never build them.
+# status: queued | in_progress | needs_review | ready | scheduled | published | parked
 # Ordered for the monetization goal (see PLAYBOOK "GOAL"): topics with proven Shorts demand first
 # (vidIQ breakout Shorts, Oct 2026: manual gearbox, combustion/4-stroke, pile driver, "where does gas go",
 # sewing machine, pumpjack, clutch, engine oil, landing gear, crane, radial engine, garbage truck).
@@ -37,12 +39,14 @@
 
 - slug: sewing-machine
   topic: LOCKSTITCH
-  status: scheduled
+  status: parked
+  note: "Built and scheduled 2026-11-01, then pulled by the owner (off-brand: not a vehicle). Metricool posts left as drafts. Do not post."
   angle: "A sewing machine ties a knot you never see. The needle pushes a loop of thread down, a spinning hook grabs it and wraps it around the bobbin, then the thread is pulled tight."
 
 - slug: pumpjack
   topic: PUMPJACK
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "Why oil fields are full of nodding machines. Motor + crank + walking beam -> sucker rods -> downhole pump with two check valves lifting oil each stroke."
 
 - slug: clutch
@@ -62,7 +66,8 @@
 
 - slug: pin-tumbler-lock
   topic: PIN TUMBLERS
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "\"Your key doesn't push anything open. It lines up a crack.\" Key pins + driver pins + springs; shear line; why a wrong key binds."
 
 - slug: landing-gear
@@ -77,7 +82,8 @@
 
 - slug: tower-crane
   topic: CLIMBING CRANE
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "How a tower crane makes itself taller: a hydraulic climbing frame lifts the top, the crane slides in a new mast section, then bolts it in."
 
 - slug: radial-engine
@@ -107,12 +113,14 @@
 
 - slug: mechanical-watch
   topic: THE ESCAPEMENT
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "\"The ticking is a tiny brake letting go five times a second.\" Mainspring, gear train, escape wheel, pallet fork, balance wheel."
 
 - slug: zipper
   topic: THE ZIPPER
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "\"The slider never touches the teeth you see lock.\" Y-shaped channel wedges hooked teeth into each other's hollows."
 
 - slug: torque-converter
@@ -147,12 +155,14 @@
 
 - slug: refrigerator
   topic: THE FRIDGE
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "\"Your fridge doesn't make cold. It moves heat.\" Compressor, condenser, expansion valve, evaporator; refrigerant phase change."
 
 - slug: hydraulic-jack
   topic: HYDRAULIC JACK
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "\"Lift a car with one hand.\" Pascal's principle; small piston vs big piston; check valves; release valve."
 
 - slug: starter-motor
@@ -177,7 +187,8 @@
 
 - slug: toilet-flush
   topic: THE FLUSH
-  status: queued
+  status: parked
+  note: "Off-brand: not a vehicle topic (owner, 2026-11-01). Do not build."
   angle: "\"A toilet is a siphon you start on purpose.\" Trapway siphon, flapper, fill valve and float."
 
 - slug: wastegate

@@ -24,7 +24,10 @@ Targets (checked Oct 2026; re-check monthly):
   looking at the whole channel, so every upload must be one you would show a reviewer.
 
 What that means for each run:
-1. **Topic:** pick things people already search for and watch (topics.yaml is ordered by proven demand).
+1. **Topic:** Expanded View is a VEHICLE channel (owner, 2026-11-01): cars first, plus anything with an engine
+   or wheels (trucks, planes, bikes). Never build a household, industrial or other non-vehicle topic, even if
+   it is queued or trending; skip it and tell the owner. Within that scope, pick things people already search
+   for and watch (topics.yaml is ordered by proven demand).
 2. **Hook (first 2 s):** motion on screen from frame 1 plus a concrete, surprising claim or question
    ("How do you drive a 50-ton steel pile into the ground?"). Never open on a slow fade or a definition.
 3. **Retention:** a new visual event every 2–3 s; reveal the key moment late enough to hold viewers; no
