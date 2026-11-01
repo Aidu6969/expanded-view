@@ -32,7 +32,7 @@
 
 - slug: fuel-system
   topic: FUEL SYSTEM
-  status: in_progress
+  status: scheduled
   angle: "Where does gasoline go after you fill up? Tank -> in-tank pump -> filter -> fuel rail -> injectors spraying into each cylinder, timed by the computer."
 
 - slug: sewing-machine
