@@ -37,6 +37,81 @@
   status: scheduled
   angle: "Where does gasoline go after you fill up? Tank -> in-tank pump -> filter -> fuel rail -> injectors spraying into each cylinder, timed by the computer."
 
+# ---- FAN-FAVOURITE ENGINES & CAR CULTURE (owner, 2026-11-01): VTEC beat every other video on both platforms.
+# Lead with legendary engines and enthusiast questions that have real fan bases. Hook = the myth or the question
+# fans argue about ("Everyone says the 2JZ is unbreakable. Why?"). Mechanism animation, no badges/logos, no real
+# engine recordings (synth the sound). Verify every number; legends often exaggerate (e.g. horsepower claims).
+
+- slug: 2jz
+  topic: 2JZ
+  status: queued
+  angle: "\"Why can a stock 2JZ take double its power?\" Cast-iron closed-deck block, seven main bearings, forged crank, strong rods, square-ish bore/stroke, factory sequential twin turbos (2JZ-GTE). Verify which parts are forged and what's myth."
+
+- slug: lfa-v10
+  topic: LFA V10
+  status: queued
+  angle: "\"Why the Lexus LFA sounds like that.\" 1LR-GUE 72-degree V10, even firing, ~9,000 rpm redline, revs so fast the tach had to be digital, Yamaha-tuned intake/exhaust acoustics and sound channel to the cabin. Verify every claim."
+
+- slug: rb26
+  topic: RB26
+  status: queued
+  angle: "\"Godzilla's heart.\" RB26DETT straight six: individual throttle bodies, twin parallel turbos, iron block; why inline sixes are naturally balanced (primary and secondary forces cancel)."
+
+- slug: rotary-13b
+  topic: THE ROTARY
+  status: queued
+  angle: "\"An engine with no pistons that revs to the moon.\" Mazda 13B: triangular rotor, eccentric shaft turns 3x per rotor turn, three chambers, apex seals (why they wear), why it sounds like a buzzsaw."
+
+- slug: boxer-rumble
+  topic: BOXER RUMBLE
+  status: queued
+  angle: "\"Why old Subarus burble.\" Flat-four boxer with unequal-length exhaust headers: exhaust pulses arrive unevenly -> the rumble; equal-length headers on newer cars removed it."
+
+- slug: flatplane-vs-crossplane
+  topic: FLAT PLANE
+  status: queued
+  angle: "\"Why a Ferrari V8 screams and an American V8 burbles.\" Cross-plane crank (90-degree throws, uneven firing per bank) vs flat-plane (180, even alternation per bank). Same cylinder count, different sound."
+
+- slug: anti-lag
+  topic: ANTI-LAG
+  status: queued
+  angle: "\"Why rally cars bang and spit fire off throttle.\" Anti-lag: throttle cracked open, ignition retarded, fuel burns in the exhaust manifold to keep the turbo spinning. Verify system variants."
+
+- slug: turbo-flutter
+  topic: TURBO FLUTTER
+  status: queued
+  angle: "\"What is that stutututu?\" Throttle snaps shut, boosted air has nowhere to go, it surges back through the compressor wheel (compressor surge); vs a blow-off valve's pssh."
+
+- slug: ls-swap
+  topic: LS SWAP
+  status: queued
+  angle: "\"Why everyone swaps an LS into everything.\" Pushrod V8: one cam in the block, compact and light for its size, cheap, huge parts supply. Verify weight/size comparisons."
+
+- slug: audi-five
+  topic: FIVE CYLINDER
+  status: queued
+  angle: "\"Why Audi's five-cylinder warbles.\" Odd cylinder count, firing every 144 degrees, 1-2-4-5-3 order: halfway between a four and a six."
+
+- slug: s2000-f20c
+  topic: F20C
+  status: queued
+  angle: "\"A 2-litre that revved to nine thousand.\" Honda F20C: short stroke, light rotating parts, roller rockers, VTEC; what limits how fast an engine can rev (piston speed, valve float)."
+
+- slug: bugatti-w16
+  topic: W16
+  status: queued
+  angle: "\"Sixteen cylinders, four turbos, and they don't all spin up at once.\" Two narrow-angle VR8 banks on one crank; sequential turbos (two first, all four above a set rpm). Verify figures."
+
+- slug: 787b
+  topic: FOUR ROTOR
+  status: queued
+  angle: "\"The loudest car to win Le Mans.\" Mazda 787B R26B four-rotor: why rotaries scream (exhaust ports opened by the rotor, high rpm), variable intake runners. Verify race facts."
+
+- slug: hellcat-whine
+  topic: SUPERCHARGER WHINE
+  status: queued
+  angle: "\"Where the Hellcat whine comes from.\" Twin-screw supercharger driven by the crank belt; meshing rotors squeeze air -> the whine. Boost with no lag. (Replaces generic supercharger entry later in the list.)"
+
 - slug: sewing-machine
   topic: LOCKSTITCH
   status: parked
@@ -130,13 +205,9 @@
 
 - slug: supercharger
   topic: SUPERCHARGER
-  status: queued
+  status: parked
+  note: "Covered by hellcat-whine."
   angle: "\"Boost with no lag, paid for with the engine's own power.\" Belt-driven roots/twin-screw vs centrifugal; compare to turbo."
-
-- slug: rotary-engine
-  topic: THE ROTARY
-  status: queued
-  angle: "\"An engine with no pistons going up and down.\" Triangular rotor, eccentric shaft, epitrochoid housing, three chambers."
 
 - slug: jake-brake
   topic: JAKE BRAKE

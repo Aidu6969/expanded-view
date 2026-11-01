@@ -28,6 +28,10 @@ What that means for each run:
    or wheels (trucks, planes, bikes). Never build a household, industrial or other non-vehicle topic, even if
    it is queued or trending; skip it and tell the owner. Within that scope, pick things people already search
    for and watch (topics.yaml is ordered by proven demand).
+   **Fan-favourite first (owner, 2026-11-01):** VTEC beat every other video on both platforms. Prefer legendary
+   engines and car-culture questions with real fan bases (2JZ, LFA V10, RB26, rotary, boxer rumble, anti-lag...).
+   Hook on the myth or argument fans already have ("Everyone says ..."), then show the real mechanism.
+   Name engines freely, but no badges/logos and no real engine recordings; synth the sound.
 2. **Hook (first 2 s):** motion on screen from frame 1 plus a concrete, surprising claim or question
    ("How do you drive a 50-ton steel pile into the ground?"). Never open on a slow fade or a definition.
 3. **Retention:** a new visual event every 2–3 s; reveal the key moment late enough to hold viewers; no
