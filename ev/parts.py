@@ -2,6 +2,7 @@
 
   rev(...)          surface of revolution about an axis parallel to X, Y or z (shafts, hubs, housings, pulleys)
   ring_front(...)   the visible half of a circle on such a surface (edge highlight)
+  cyl3(...)          a cylinder between two 3D points (tilted pistons, V-engine bores, valve heads)
   wheel(...)        bladed wheel (compressor / turbine / fan / impeller) with correct blade occlusion
   spline(...)       Catmull-Rom resample of a polyline (smooth pipe and flow paths)
   pipe(...)         a tube drawn along a screen-space path
@@ -305,3 +306,55 @@ def arrow_head(cv, pts, color, size=18.0, a=1.0):
     nrm = np.array([-tv[1], tv[0]])
     tri = np.array([p + tv * size * 0.6, p - tv * size * 0.6 + nrm * size * 0.6, p - tv * size * 0.6 - nrm * size * 0.6])
     cv.drawPath(poly_path(tri), paint(color, a=a))
+
+
+# ----------------------------------------------------------------- cylinder along any 3D axis
+def cyl3(cv, pj, p0, p1, r, base, alpha=1.0, edge=None, edge_w=2.0, glow=0.0, n=40, fill_a=1.0, cap=True):
+    """Solid cylinder from 3D point p0 to p1 (X, Y, z) with radius r, any orientation (tilted pistons,
+    V-engine bores, valve heads). Shaded like rev(); fill_a < 1 gives a glass body with a solid edge."""
+    p0, p1 = np.asarray(p0, float), np.asarray(p1, float)
+    d = p1 - p0
+    ln = np.linalg.norm(d)
+    if ln < 1e-9:
+        return
+    d /= ln
+    a = np.array([0.0, 0.0, 1.0]) if abs(d[2]) < 0.9 else np.array([1.0, 0.0, 0.0])
+    e1 = np.cross(d, a)
+    e1 /= np.linalg.norm(e1)
+    e2 = np.cross(d, e1)
+    th = np.linspace(0, 2 * np.pi, n, endpoint=False)
+    off = r * (np.outer(np.cos(th), e1) + np.outer(np.sin(th), e2))
+    R0, R1 = p0 + off, p1 + off
+    S0, S1 = pj(R0[:, 0], R0[:, 1], R0[:, 2]), pj(R1[:, 0], R1[:, 1], R1[:, 2])
+    h = _hull(np.vstack([S0, S1]))
+    sa, sb = pj(*p0), pj(*p1)
+    ax = sb - sa
+    if np.linalg.norm(ax) < 1e-6:
+        ax = np.array([1.0, 0.0])
+    ax /= np.linalg.norm(ax)
+    perp = np.array([-ax[1], ax[0]])
+    if perp[1] > 0:
+        perp = -perp
+    mid = (sa + sb) / 2
+    Rs = r * pj.s * 1.02
+    if alpha < 1:
+        cv.saveLayerAlpha(None, int(255 * clamp(alpha)))
+    fill = skia.Paint(AntiAlias=True)
+    fill.setShader(lin_grad(tuple(mid + perp * Rs), tuple(mid - perp * Rs),
+                            [shade(base, 1.05), shade(base, 1.25), shade(base, 0.95), shade(base, 0.42)],
+                            [0, 0.3, 0.55, 1]))
+    if fill_a < 1:
+        cv.saveLayerAlpha(None, int(255 * clamp(fill_a)))
+    pth = poly_path(h)
+    cv.drawPath(pth, fill)
+    if cap:
+        near = S0 if pj.depth(*p0) < pj.depth(*p1) else S1
+        cv.drawPath(poly_path(near), paint(shade(base, 1.08)))
+        cv.drawPath(poly_path(near), paint(shade(base, 0.38), stroke=1.3 * pj.s))
+    if fill_a < 1:
+        cv.restore()
+    if glow > 0 and edge is not None:
+        cv.drawPath(pth, paint(edge, a=0.5 * glow, stroke=edge_w * 3 * pj.s, blur=7 * pj.s))
+    cv.drawPath(pth, paint(edge if edge is not None else shade(base, 0.3), stroke=(edge_w if edge else 1.3) * pj.s))
+    if alpha < 1:
+        cv.restore()

@@ -237,10 +237,12 @@ def build_mix(tl, plan, out_wav, music_start, t_end, t_topic, beat_anchor=None):
         rpm = np.interp(t, ts, np.array([e["rpm"](x) for x in ts]))
         vt = np.interp(t, ts, np.array([e.get("bright", lambda _: 0.0)(x) for x in ts]))
         ph = 2 * np.pi * np.cumsum(rpm / 60.0) / SR
-        orders = {0.5: 0.12, 1.0: 0.18, 1.5: 0.1, 2.0: 1.0, 3.0: 0.25, 4.0: 0.45, 5.0: 0.12, 6.0: 0.3, 8.0: 0.18, 10.0: 0.1}
+        orders = e.get("orders") or {0.5: 0.12, 1.0: 0.18, 1.5: 0.1, 2.0: 1.0, 3.0: 0.25, 4.0: 0.45, 5.0: 0.12,
+                                     6.0: 0.3, 8.0: 0.18, 10.0: 0.1}
+        po = e.get("pulse_order", 2.0)   # firing pulses per crank turn (4-stroke: cylinders / 2)
         for o, a in orders.items():
             eng += a * (1.0 + (1.6 if o >= 4 else 0.3) * vt) * np.sin(o * ph + o * 1.3)
-        eng += bp(_rng.standard_normal(N), 500, 3500) * (0.5 + 0.5 * np.cos(2 * ph)) ** 3 * (0.6 + 1.2 * vt)
+        eng += bp(_rng.standard_normal(N), 500, 3500) * (0.5 + 0.5 * np.cos(po * ph)) ** 3 * (0.6 + 1.2 * vt)
         eng = lp(np.tanh(0.8 * eng), 5500)
         keys = e.get("env", [(0, 0.3), (T, 0.3)])
         eng *= np.interp(t, [k[0] for k in keys], [k[1] for k in keys]) * (0.55 + 0.45 * np.clip(rpm / 7300, 0, 1))
