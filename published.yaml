@@ -114,3 +114,20 @@
   metricool_id: 413732627
   uuid: "-2068089068426473967"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-2068089068426473967
+- slug: lfa-v10
+  date: 2026-11-02
+  platform: youtube
+  scheduled: "2026-11-02T16:05"
+  title: "Why the Lexus LFA sounds like that: the 72° V10 explained #lfa #lexus #v10"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-02-lfa-v10.mp4
+  metricool_id: 414325972
+  uuid: "7202675537176316585"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=7202675537176316585
+- slug: lfa-v10
+  date: 2026-11-02
+  platform: tiktok
+  scheduled: "2026-11-02T16:05"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-02-lfa-v10.mp4
+  metricool_id: 414325997
+  uuid: "2059708777946432202"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=2059708777946432202
