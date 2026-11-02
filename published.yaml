@@ -97,3 +97,20 @@
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=1246669660851356485
 # sewing-machine (2026-11-01): scheduled for 2026-11-02 10:00, then pulled by the owner (off-brand).
 #   Metricool posts 413186408 (YouTube) and 413186417 (TikTok) set to draft, autoPublish off.
+- slug: 2jz
+  date: 2026-11-02
+  platform: youtube
+  scheduled: "2026-11-02T10:00"
+  title: "Why the 2JZ is so strong: can it really take double? #2jz #supra #jdm"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-02-2jz.mp4
+  metricool_id: 413732593
+  uuid: "-1937632759152162687"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-1937632759152162687
+- slug: 2jz
+  date: 2026-11-02
+  platform: tiktok
+  scheduled: "2026-11-02T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-02-2jz.mp4
+  metricool_id: 413732627
+  uuid: "-2068089068426473967"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-2068089068426473967
