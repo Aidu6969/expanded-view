@@ -34,6 +34,14 @@ What that means for each run:
    Name engines freely, but no badges/logos and no real engine recordings; synth the sound.
 2. **Hook (first 2 s):** motion on screen from frame 1 plus a concrete, surprising claim or question
    ("How do you drive a 50-ton steel pile into the ground?"). Never open on a slow fade or a definition.
+   **Open-loop rule (owner, 2026-11-03, from YouTube retention data):** the first line must be an open question
+   or a myth that the video does NOT answer until the key moment (VTEC: "Everyone says VTEC kicked in. But
+   what's actually kicking in?" kept 94% of viewers at the halfway point and 69% at the end). A plain fact as
+   the hook followed by a definition (turbo: "Your exhaust can spin this..." then "A turbocharger is two
+   wheels on one shaft") lost ~40% of viewers between seconds 6 and 15 and stalled at ~1,500 views.
+   So: no definition or "X is ..." sentence before ~10 s; line 2 restates the stakes ("Here's what's really
+   happening") instead of explaining; re-hook around 25-35 s with a second question ("So why 72 degrees?");
+   the payoff of the opening question lands in the key beat, not earlier.
 3. **Retention:** a new visual event every 2–3 s; reveal the key moment late enough to hold viewers; no
    dead air; the 61–75 s length is required for TikTok pay, so it must earn every second.
 4. **Originality (both platforms):** a custom-modelled animation of THIS mechanism, a script with real
