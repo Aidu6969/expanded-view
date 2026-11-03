@@ -7,3 +7,5 @@ long/*/vo/
 long/*/assets/*
 !long/*/assets/manifest.yaml
 !long/*/assets/own/
+# Local secrets written by `elevenlabs onboard`
+/.env.local
