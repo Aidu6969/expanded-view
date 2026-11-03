@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 episodes/*/vo/
 .DS_Store
+long/*/vo/
+long/*/assets/*
+!long/*/assets/manifest.yaml
+!long/*/assets/own/

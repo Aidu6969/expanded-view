@@ -70,8 +70,21 @@ class Timeline:
             if s.ndim > 1:
                 s = s.mean(1)
             dur = len(s) / sr
-            runs = _pauses(s, sr)
             toks = text.split()
+            exact = None
+            jp = os.path.join(self.vo_dir, f"{key}.json")
+            if os.path.exists(jp):
+                import json
+                exact = json.load(open(jp)).get("words")
+            if exact and len(exact) == len(toks):
+                # exact word times from the narrator's character alignment (ElevenLabs)
+                for i, w in enumerate(exact):
+                    self.words.append({"line": key, "i": i, "w": toks[i], "start": t + w["start"],
+                                       "end": t + max(w["end"], w["start"] + 0.04)})
+                self.lines[key] = {"start": t, "end": t + dur, "dur": dur}
+                t += dur
+                continue
+            runs = _pauses(s, sr)
             bidx = [i for i, w in enumerate(toks[:-1]) if re.search(r"[.,?:;!]$", w)]
             wts = [_weight(w) for w in toks]
             tot = sum(wts)

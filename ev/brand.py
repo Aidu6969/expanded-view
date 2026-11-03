@@ -77,6 +77,17 @@ def hook_title(cv, t, lines, t_out):
             x += draw_text(cv, s, x, y + dy, f, c, a=a, glow=14 if c == RED else None)
 
 
+def series_pill(cv, t, series, t_out):
+    """Franchise label over the hook title, e.g. ("LEGENDARY ENGINES", 4) -> 'LEGENDARY ENGINES · #4'."""
+    ta = 1 - ease(lin(t, t_out - 0.35, t_out + 0.15))
+    if ta <= 0:
+        return
+    name, no = series if isinstance(series, (tuple, list)) else (series, None)
+    txt = f"{name} · #{no}" if no else name
+    pill(cv, 540, 196 - 30 * ease(lin(t, t_out - 0.35, t_out + 0.15)), txt, font("inter_xb", 30), INK,
+         border=RED, a=ta, align="center", tracking=4, dot=RED)
+
+
 # ------------------------------------------------------------------ captions
 def captions(cv, t, tl, stop):
     if t >= stop:

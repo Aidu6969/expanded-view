@@ -31,7 +31,8 @@ What that means for each run:
    **Fan-favourite first (owner, 2026-11-01):** VTEC beat every other video on both platforms. Prefer legendary
    engines and car-culture questions with real fan bases (2JZ, LFA V10, RB26, rotary, boxer rumble, anti-lag...).
    Hook on the myth or argument fans already have ("Everyone says ..."), then show the real mechanism.
-   Name engines freely, but no badges/logos and no real engine recordings; synth the sound.
+   Name engines freely, but no badges/logos and no downloaded recordings of real cars; engine sounds are realistic
+   generated clips of a generic engine type (`SFX_PROMPTS`, see section 5).
 2. **Hook (first 2 s):** motion on screen from frame 1 plus a concrete, surprising claim or question
    ("How do you drive a 50-ton steel pile into the ground?"). Never open on a slow fade or a definition.
    **Open-loop rule (owner, 2026-11-03, from YouTube retention data):** the first line must be an open question
@@ -57,7 +58,12 @@ What that means for each run:
 
 ---------------------------------------------------------------------------------------------------
 ## 0. Fixed brand — NEVER change per episode
-- **Voice:** `ev/voice.py` (Kokoro `am_michael`, speed 1.0). Never speed it up; never swap voices.
+- **Voice (owner, 2026-11-03):** ElevenLabs "Brian" (voice B), `ev/voice.py`, for EVERY video, Shorts and long-form.
+  Never swap voices, never fall back to the old Kokoro voice for anything that gets posted (`EV_VOICE=kokoro` is
+  for local previews only and fails QA). Lines are generated with the neighbouring lines as context, and word
+  times come from ElevenLabs' alignment, so captions are exact. Pronunciation: captions keep the real spelling;
+  `voice.LEXICON` + the episode's `SAY` dict respell what the narrator says (check with
+  `python -c "from ev import voice; print(voice.phonemes('...'))"`). Add any new acronym or name to `SAY`.
 - **Look:** dark navy blueprint grid, 3/4 orthographic 3D mechanisms (`ev/gfx.py`), Poppins/Inter type,
   palette in `ev/gfx.py`. Colour meaning: CYAN = normal/baseline state, RED = the key/high/aggressive
   state, AMBER = fluids, pressure, heat, electric signals, YEL = annotations and highlights,
@@ -68,8 +74,15 @@ What that means for each run:
   "That's <TOPIC>." The end card shows the punchline (2 lines, second in red), then the big red
   <TOPIC> title with a 1–2 line subtitle. Set `PUNCH`, `TOPIC`, `SUBTITLE`, `END_WORD`, `TOPIC_WORD`.
 - **Length:** 61–75 s (TikTok Creator Rewards only pays for videos over 1 minute; Shorts ≤ 3 min).
-  At this voice that is ~165–190 words of narration.
-- **Sound:** narration + synthesized music bed + SFX (`ev/audio.py`); -14 LUFS. No licensed music.
+  Brian speaks ~2.5 words/s, so that is roughly 150–180 words; trust the build's duration, not the word count.
+- **Sound:** narration + our own synthesized music bed + REALISTIC sound effects (`ev/sfx.py`: house library
+  `ev/sfx/*.wav` + episode clips from `SFX_PROMPTS`, all made with the ElevenLabs Sound Effects API and committed
+  so they are made once). The old synthesized SFX and engine note are retired. -14 LUFS. No licensed music, no AI music.
+- **Loop ending (automatic):** the last 0.45 s cross-fades into frame 0, so a replay looks seamless (rewatches count).
+- **Series label:** engine/car-culture episodes set `SERIES = ("LEGENDARY ENGINES", <n>)` (n = count of
+  published episodes in the series + 1); it shows above the hook title. Other topics: `SERIES = ("HOW IT WORKS", n)`.
+- **Search phrase on screen:** `HOOK_TITLE` must contain the phrase people type (TikTok and YouTube read on-screen
+  text): "WHY THE LFA SOUNDS LIKE THAT", "HOW A CLUTCH ACTUALLY WORKS".
 
 ---------------------------------------------------------------------------------------------------
 ## 1. Setup (fresh workspace every run)
@@ -80,6 +93,10 @@ What that means for each run:
    is normally already cloned in the working directory, and `publish_media.sh` falls back automatically
    (step 8.2). A missing media repo is NOT a reason to stop (owner decision, 2026-10-31).
 2. `bash setup.sh` (Python deps, voice model; brand fonts are bundled in `ev/fonts`).
+   **Narrator check (must pass):** `python -c "from ev import voice; print(voice.check_configured())"`.
+   If it raises NarratorNotConfigured: do NOT build or post. Set the next topic to `needs_review` only if you
+   started it, and notify the owner with the exact message plus "see docs/SETUP_ACCOUNTS.md step 1". Stop.
+   **Sound library:** if `ev/sfx/` has no .wav files, run `python -m ev.sfx --library` once and commit `ev/sfx/`.
 3. Read `ev/brand.py`, the function list of `ev/gfx.py`, and `episodes/vtec/scene.py` before writing
    a new scene.
 4. Load the Metricool tools: ToolSearch `metricool` (they are `mcp__Metricool_Social_Media_Management__*`).
@@ -140,7 +157,9 @@ Scaffold with `python tools/new_episode.py <slug>`, then write the scene. Rules:
   bottom and right edge). Hook title occupies y 230–450 until the hook ends.
 - Fade/shrink your content as the end card arrives: `current.ending_k(t)`.
 - `sound()` returns the audio plan (see `ev/audio.py`): SFX on key moments, optional build/drop
-  around the key moment, optional engine note for engine topics.
+  around the key moment. Engine/mechanical sounds: declare realistic clips in `SFX_PROMPTS = {name: (prompt, seconds)}`
+  (generic engine type, e.g. "high revving naturally aspirated V10, free rev to 9000 rpm, exterior, no music"), use
+  them as sfx cues, and commit `episodes/<slug>/sfx/`. The `engine` key (synth note) is ignored.
 
 ## 6. Build loop
 ```bash
@@ -212,6 +231,17 @@ notify the owner with the reason.
 6. Append to `published.yaml` one entry per post: slug, date, platform, `scheduled` (slot dateTime),
    title, media URL, Metricool id/uuid, plannerUrl. Set the topic's status to `scheduled`. Commit + push.
 
+### 8b. YouTube direct upload (when configured) and the YouTube cut
+- If `python tools/youtube_upload.py --check` prints `"ok": true`, upload the YouTube Short directly instead of the
+  Metricool YouTube post: `python tools/youtube_upload.py <mp4> --meta episodes/<slug>/episode.py --publish-at <slot iso>`.
+  It goes up private and YouTube publishes it at the slot; the cancel link for the owner is the `studio` URL it prints.
+  Record `platform: youtube, via: direct, videoId, studio` in published.yaml. TikTok always stays on Metricool.
+  If the check fails, use Metricool for YouTube as before (and mention the reason once in the owner message).
+- **YouTube cut A/B (owner, 2026-11-03):** every second episode (even count in published.yaml) sets
+  `YT_DROP = [<1-2 nice-to-have beats>]` in episode.py, runs `python tools/yt_cut.py episodes/<slug>` and posts
+  `out/<slug>/<slug>_yt.mp4` (40–50 s) to YouTube; TikTok always gets the full 61–75 s video. Record `yt_cut: true`.
+  The weekly review compares average % viewed of cut vs full episodes.
+
 ## 9. Notify the owner
 Send the finished video with SendUserFile (status: proactive, display: render) and a short
 SendUserMessage: the title, when it goes live (e.g. "Fri 10:00 AM"), the platforms, the Metricool
@@ -222,3 +252,24 @@ planner link(s), the topic queued next, and "To cancel, open the link and delete
 - No real people's likenesses, no brand logos, no copyrighted footage/music.
 - No medical/financial/legal claims; stick to how mechanisms work.
 - Don't repeat a topic; vary hooks. Two videos a day must still be distinct, substantive topics.
+
+---------------------------------------------------------------------------------------------------
+## 11. Long-form (YouTube only, owner 2026-11-03): one 8–12 min video a week
+History of legendary cars, the cars enthusiasts actually buy, and comparisons (e.g. BMW M3 vs Mercedes E63 AMG).
+Higher bar than Shorts: real cars on screen, deep research, chapters.
+- **Folder:** `long/<slug>/` with `episode.py` (LINES = paragraphs, SHOTS, CHAPTERS, META, SAY, SFX), `research.md`
+  (every fact sourced, myths section), `assets/manifest.yaml`. Builder: `python -m ev.long.build long/<slug>`
+  (16:9, 1920x1080; `--stills` for a quick look). Reference: `long/honda-nsx`.
+- **Footage: licensed only.** Wikimedia Commons photos (PD/CC0/CC BY/CC BY-SA) and Pexels clips, added with
+  `python -m ev.long.assets ...` (it refuses NC/ND). Look at every photo before using it: right car, right
+  generation, no people's faces as the subject, no watermark. Every photo/clip shows its credit on screen and the
+  description lists all credits automatically. Never: clips from YouTube/TV/reviews, press kits that forbid
+  monetised use, AI images of real cars. If a needed image doesn't exist under a free license, use a spec/
+  timeline/fact card instead.
+- **Script:** 1,300–1,700 words, open-loop cold open (a myth or question paid off near the end), 6–8 chapters,
+  numbers only from research.md, uncertain claims attributed ("reportedly", "Honda says").
+- **QA:** `"ok": true` (8–12 min, -14 LUFS, ElevenLabs voice), every shot's asset licensed, look at qa_sheet.jpg
+  and 10+ stills across the video.
+- **Publish:** direct YouTube upload (`--long --category AUTOS_VEHICLES`) when configured, otherwise Metricool
+  YouTube post with `youtubeData.type: "video"`. Slot: Saturday 10:00 New York (at least 3 h ahead).
+  Upload the .srt as captions later if the API allows; record in published.yaml with `format: long`.

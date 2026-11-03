@@ -1,10 +1,12 @@
-"""Soundtrack: narration + synthesized music bed + SFX + optional engine note. Loudness: -14 LUFS (done at mux).
+"""Soundtrack: narration + synthesized music bed + realistic SFX (ev/sfx.py). Loudness: -14 LUFS (done at mux).
 
 Episodes return a plan from scene.sound():
   {
     "build": (t0, t1),            # optional: beat intensifies (e.g. while something winds up)
     "drop":  (t1, t2),            # optional: full groove (e.g. after the key moment)
-    "sfx": [(t, kind, gain), ...] # kinds: impact, whoosh_up, whoosh_down, clunk, tick, spool, hiss
+    "sfx": [(t, kind, gain), ...] # realistic clips from ev/sfx.py: impact, impact_long, whoosh_up, whoosh_down,
+                                  # whoosh_big, clunk, tick, spool, hiss, ratchet, spark, rumble, or any name in
+                                  # scene.SFX_PROMPTS (episode-specific, e.g. an engine revving)
     "engine": {                   # optional engine note that follows an RPM curve
         "rpm": callable t->rpm, "bright": callable t->0..1 (harder timbre), "env": [(t, level), ...]
     },
@@ -225,13 +227,20 @@ def build_mix(tl, plan, out_wav, music_start, t_end, t_topic, beat_anchor=None):
     sfx = np.zeros(N)
     cues = list(plan.get("sfx", []))
     cues += [(t_end - 0.25, "whoosh_up", 0.35), (t_topic + 0.05, "impact_long", 0.5)]
+    from . import sfx as sfxlib
     for cue in cues:
         tt_, kind, g = cue[0], cue[1], (cue[2] if len(cue) > 2 else 0.5)
-        _place(sfx, SFX[kind](), tt_, g)
+        clip = sfxlib.get(kind, plan.get("_ep_dir"), plan.get("_prompts"))
+        _place(sfx, clip.astype(np.float64), tt_, g)
 
     # engine note
     eng = np.zeros(N)
     e = plan.get("engine")
+    if e:
+        # Synthesized engine notes are retired (owner, 2026-11-03: real sounds only). Use realistic engine clips
+        # from scene.SFX_PROMPTS as sfx cues instead. Kept only so old episodes can be rebuilt for reference.
+        print("warning: synth engine in sound() is ignored; use SFX_PROMPTS engine clips", flush=True)
+        e = None
     if e:
         ts = t[::48]
         rpm = np.interp(t, ts, np.array([e["rpm"](x) for x in ts]))
@@ -248,7 +257,7 @@ def build_mix(tl, plan, out_wav, music_start, t_end, t_topic, beat_anchor=None):
         eng *= np.interp(t, [k[0] for k in keys], [k[1] for k in keys]) * (0.55 + 0.45 * np.clip(rpm / 7300, 0, 1))
 
     music_env = np.interp(t, [0, music_start - 0.25, music_start + 0.35, T - 1.0, T], [0.0, 0.0, 1.0, 1.0, 0.0])
-    mix = vo + music * 0.16 * (1 - 0.55 * act) * music_env + eng * 0.16 * (1 - 0.45 * act) + sfx * 0.42
+    mix = vo + music * 0.16 * plan.get("music_gain", 1.0) * (1 - 0.55 * act) * music_env + eng * 0.16 * (1 - 0.45 * act) + sfx * 0.42
     mix = lp(mix, 16000, 2)
     fade = np.ones(N)
     fade[-int(0.5 * SR):] = np.linspace(1, 0, int(0.5 * SR))

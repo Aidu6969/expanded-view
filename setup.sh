@@ -10,5 +10,10 @@ command -v ffmpeg >/dev/null || { echo "ffmpeg missing"; exit 1; }
 
 # Brand fonts are bundled in ev/fonts. Voice model (Kokoro v1.0) goes to ~/.cache/expanded-view/models.
 python3 -c "import ev.gfx; print('fonts ok')"
-python3 -c "from ev import voice; voice.ensure_models(); print('voice model ready')"
+# Narrator = ElevenLabs "Brian" (needs ELEVENLABS_API_KEY + api.elevenlabs.io allowed; docs/SETUP_ACCOUNTS.md).
+python3 -c "from ev import voice
+try:
+    print('narrator ok:', voice.check_configured())
+except voice.NarratorNotConfigured as e:
+    print('NARRATOR NOT CONFIGURED:', e)"
 echo "setup complete"

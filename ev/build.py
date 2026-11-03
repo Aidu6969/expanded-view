@@ -38,7 +38,7 @@ def prepare(ep_dir):
         sys.path.insert(0, ep_dir)
     ep = _load(os.path.join(ep_dir, "episode.py"), "episode")
     vo_dir = os.path.join(ep_dir, "vo")
-    voice.generate(ep.LINES, vo_dir)
+    voice.generate(ep.LINES, vo_dir, lexicon=getattr(ep, "SAY", None))
     tl = Timeline(ep.LINES, vo_dir, gaps=getattr(ep, "GAPS", None))
     current.tl, current.ep = tl, ep
     current.t_end = tl.find(*ep.END_WORD) - 0.15
@@ -48,13 +48,27 @@ def prepare(ep_dir):
     return ep, tl, scene
 
 
-def draw_frame(cv, t, ep, tl, scene):
+LOOP = 0.45   # last seconds cross-fade into frame 0, so a replay loops seamlessly (rewatches count)
+
+
+def _compose(cv, t, ep, tl, scene):
     cv.drawImage(brand.background(), 0, 0)
     scene.draw(cv, t)
     if getattr(ep, "HOOK_TITLE", None):
         brand.hook_title(cv, t, ep.HOOK_TITLE, current.hook_out)
+        if getattr(ep, "SERIES", None):
+            brand.series_pill(cv, t, ep.SERIES, current.hook_out)
     brand.end_card(cv, t, ep.PUNCH, ep.TOPIC, getattr(ep, "SUBTITLE", None), current.t_end, current.t_topic)
     brand.captions(cv, t, tl, current.t_end - 0.05)
+
+
+def draw_frame(cv, t, ep, tl, scene):
+    _compose(cv, t, ep, tl, scene)
+    k = (t - (tl.total - LOOP)) / LOOP
+    if k > 0:
+        cv.saveLayerAlpha(None, int(255 * min(1.0, k) ** 1.5))
+        _compose(cv, 0.0, ep, tl, scene)
+        cv.restore()
 
 
 def cuts(ep, tl):
@@ -132,6 +146,8 @@ def qa(out_mp4, ep, tl, out_dir):
             lufs = float(line.split()[1])
             break
     problems = []
+    if voice.backend() != "elevenlabs":
+        problems.append("preview voice (EV_VOICE=kokoro): publishing requires the ElevenLabs narrator")
     if dur < 61:
         problems.append(f"duration {dur:.1f}s < 61s (TikTok Creator Rewards only pays for videos over 1 minute)")
     if dur > 80:
@@ -184,6 +200,8 @@ def build(ep_dir, jobs=2):
                     "-c", "copy", f"{out_dir}/video_only.mp4"], check=True)
     from .audio import build_mix
     plan = scene.sound() if hasattr(scene, "sound") else {}
+    plan["_ep_dir"] = os.path.abspath(ep_dir)
+    plan["_prompts"] = getattr(scene, "SFX_PROMPTS", None)
     music_start = getattr(scene, "MUSIC_START", None) or tl.line(ep.LINES[1][0])["start"]
     build_mix(tl, plan, f"{out_dir}/mix.wav", music_start, current.t_end, current.t_topic,
               beat_anchor=getattr(scene, "BEAT_ANCHOR", None))
