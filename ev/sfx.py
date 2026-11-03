@@ -76,8 +76,36 @@ def _load(path):
     return x
 
 
+def _preview():
+    return os.environ.get("EV_VOICE", "").lower() == "kokoro" or os.environ.get("EV_PREVIEW") == "1"
+
+
+def _preview_clip(name):
+    """LOCAL PREVIEW ONLY (never published): stand-in sounds when ElevenLabs isn't configured yet."""
+    from . import audio
+    if name in audio.SFX:
+        return audio.SFX[name]().astype(np.float32) * 0.6
+    rng = np.random.default_rng(abs(hash(name)) % 2**32)
+    n = int(1.5 * SR)
+    x = np.zeros(n, np.float32)
+    for k in range(0, n - int(0.06 * SR), int(SR / 11)):   # staccato barks
+        m = int(0.05 * SR)
+        x[k:k + m] += (rng.standard_normal(m) * np.exp(-np.arange(m) / (0.012 * SR))).astype(np.float32)
+    return audio.lp(x, 2500).astype(np.float32) * 0.8
+
+
 def get(name, episode_dir=None, prompts=None):
     """Return the clip for `name` (generating and caching it if it has a prompt but no file yet)."""
+    try:
+        return _get(name, episode_dir, prompts)
+    except Exception as e:
+        from .voice import NarratorNotConfigured
+        if isinstance(e, NarratorNotConfigured) and _preview():
+            return _preview_clip(name)
+        raise
+
+
+def _get(name, episode_dir=None, prompts=None):
     cands = []
     if episode_dir:
         cands.append(os.path.join(episode_dir, "sfx", f"{name}.wav"))
