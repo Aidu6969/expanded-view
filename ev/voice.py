@@ -75,14 +75,22 @@ def spoken_tokens(text, lexicon=None):
     return out
 
 
+# Which narrator posted videos use. Owner, 2026-11-05: ElevenLabs is paused until the API key reaches the task
+# environment, so scheduled runs go back to the old Kokoro voice (am_michael, the voice of the first 8 episodes).
+# Set back to "elevenlabs" once ELEVENLABS_API_KEY works. EV_VOICE=kokoro|elevenlabs overrides it for one run.
+DEFAULT_BACKEND = "kokoro"
+
+
 def backend():
-    return "kokoro" if os.environ.get("EV_VOICE", "").lower() == "kokoro" else "elevenlabs"
+    v = os.environ.get("EV_VOICE", "").strip().lower()
+    return v if v in ("kokoro", "elevenlabs") else DEFAULT_BACKEND
 
 
 def check_configured():
     """Raise NarratorNotConfigured with a clear reason if the narrator can't run."""
     if backend() == "kokoro":
-        return
+        ensure_models()
+        return {"backend": "kokoro", "voice": KOKORO_VOICE}
     key = os.environ.get("ELEVENLABS_API_KEY", "").strip()
     if not key:
         raise NarratorNotConfigured("ELEVENLABS_API_KEY is not set in this environment")
@@ -216,7 +224,7 @@ def phonemes(text, lexicon=None):
     return " | ".join(f"{c}->{s}" if c != s else c for c, s in spoken_tokens(text, lexicon))
 
 
-# ------------------------------------------------------------------ local preview only (never publish)
+# ------------------------------------------------------------------ Kokoro (am_michael): used while DEFAULT_BACKEND = "kokoro"
 KOKORO_VOICE = "am_michael"
 MODEL_DIR = os.path.expanduser("~/.cache/expanded-view/models")
 MODEL_URLS = {

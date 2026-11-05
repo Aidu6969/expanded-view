@@ -62,6 +62,11 @@ What that means for each run:
 
 ---------------------------------------------------------------------------------------------------
 ## 0. Fixed brand — NEVER change per episode
+- **NARRATOR PAUSE (owner, 2026-11-05):** ElevenLabs is paused until its API key reaches the task environment.
+  `ev/voice.py DEFAULT_BACKEND = "kokoro"`: posted videos use the old Kokoro voice (`am_michael`, the voice of the
+  first 8 episodes) and our own synthesized SFX stand-ins (`ev/sfx.py`); the build's QA accepts them. Everything else
+  in this playbook is unchanged. When the owner says ElevenLabs works, set `DEFAULT_BACKEND = "elevenlabs"` and the
+  rules below (Brian, realistic SFX) apply again.
 - **Voice (owner, 2026-11-03):** ElevenLabs "Brian" (voice B), `ev/voice.py`, for EVERY video, Shorts and long-form.
   Never swap voices, never fall back to the old Kokoro voice for anything that gets posted (`EV_VOICE=kokoro` is
   for local previews only and fails QA). Lines are generated with the neighbouring lines as context, and word
@@ -97,7 +102,7 @@ What that means for each run:
    is normally already cloned in the working directory, and `publish_media.sh` falls back automatically
    (step 8.2). A missing media repo is NOT a reason to stop (owner decision, 2026-10-31).
 2. `bash setup.sh` (Python deps, voice model; brand fonts are bundled in `ev/fonts`).
-   **Narrator check (must pass):** `python -c "from ev import voice; print(voice.check_configured())"`.
+   **Narrator check (must pass; with the Kokoro pause it just checks the voice model):** `python -c "from ev import voice; print(voice.check_configured())"`.
    If it raises NarratorNotConfigured: do NOT build or post. Set the next topic to `needs_review` only if you
    started it, and notify the owner with the exact message plus "see docs/SETUP_ACCOUNTS.md step 1". Stop.
    **Sound library:** if `ev/sfx/` has no .wav files, run `python -m ev.sfx --library` once and commit `ev/sfx/`.

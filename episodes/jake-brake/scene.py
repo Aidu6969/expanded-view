@@ -318,8 +318,9 @@ def draw_road(cv, t, k, rel_events, cam=(560.0, 1130.0, TR_S), xray=0.0, sign_k=
         m = pj(1300 * e, -395, -126)
         look.wet_reflection(cv, m[0], road_top + 14, road_top + 160, 10, AMBER, a=0.18)
     if sign_k > 0 and sign_x is not None:
-        look.road_sign(cv, sign_x, road_top + 330, ["NO", "ENGINE", "BRAKE"], w=250, h=210, a=sign_k, post=200)
-        look.beam(cv, (sign_x - 300, road_top + 200), (sign_x, road_top + 230), 4, 120, a=0.12 * sign_k)
+        # kept above y~1380 so the captions (y~1440) never cover it
+        look.road_sign(cv, sign_x, road_top + 235, ["NO", "ENGINE", "BRAKE"], w=240, h=195, a=sign_k, post=70)
+        look.beam(cv, (sign_x + 320, road_top + 120), (sign_x, road_top + 150), 4, 120, a=0.12 * sign_k)
     cv.restore()
     # exhaust pulses: puff + pressure ring at every release
     sp = np.array(stack)
@@ -534,7 +535,7 @@ def draw_cyl(cv, t, k):
     draw_graph(cv, t, k, c, jon)
 
 
-GX, GY, GW, GH = 150.0, 1255.0, 700.0, 115.0
+GX, GY, GW, GH = 150.0, 1228.0, 700.0, 115.0
 
 
 def draw_graph(cv, t, k, c, jon):
@@ -671,7 +672,7 @@ def draw(cv, t):
     draw_six(cv, t, scene_k(t, S_SIX))
     k3 = scene_k(t, S_ROAD3) * kE
     if k3 > 0:
-        sx = 860 - (t - T_SIGN) * 70
+        sx = 480 - (t - T_SIGN) * 55
         draw_road(cv, t, k3, REL_ROAD3, sign_k=eout(lin(t, T_SIGN - 0.3, T_SIGN + 0.1)), sign_x=sx)
     draw_road_overlays(cv, t)
     draw_header(cv, t)

@@ -55,8 +55,8 @@
 
 - slug: jake-brake
   topic: JAKE BRAKE
-  status: queued
-  note: "Style pilot built 2026-11-03 (episodes/jake-brake, upgraded look) with the PREVIEW voice. Next run: rebuild with the ElevenLabs narrator (generates the SFX_PROMPTS sounds), check stills + QA, then post. Do not rewrite the scene."
+  status: in_progress
+  note: "Built 2026-11-05 with the Kokoro voice (owner paused ElevenLabs)."
   angle: "\"Why semi-trucks sound like machine guns going downhill.\" Compression release brake: the engine compresses air, then an extra valve opens near top dead centre so the energy is thrown away instead of pushing the piston back down. Loud because it dumps compressed air straight into the exhaust. (Competitor proof: ~1.1M views, Nov 2026.) Verify valve timing and why some towns ban unmuffled engine brakes."
 
 - slug: rb26

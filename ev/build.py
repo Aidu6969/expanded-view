@@ -146,8 +146,8 @@ def qa(out_mp4, ep, tl, out_dir):
             lufs = float(line.split()[1])
             break
     problems = []
-    if voice.backend() != "elevenlabs":
-        problems.append("preview voice (EV_VOICE=kokoro): publishing requires the ElevenLabs narrator")
+    if voice.backend() != voice.DEFAULT_BACKEND:
+        problems.append(f"narrator {voice.backend()} is not the house narrator ({voice.DEFAULT_BACKEND}, ev/voice.py)")
     if dur < 61:
         problems.append(f"duration {dur:.1f}s < 61s (TikTok Creator Rewards only pays for videos over 1 minute)")
     if dur > 80:

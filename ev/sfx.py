@@ -77,14 +77,25 @@ def _load(path):
 
 
 def _preview():
-    return os.environ.get("EV_VOICE", "").lower() == "kokoro" or os.environ.get("EV_PREVIEW") == "1"
+    from .voice import backend
+    return backend() == "kokoro" or os.environ.get("EV_PREVIEW") == "1"
 
 
 def _preview_clip(name):
-    """LOCAL PREVIEW ONLY (never published): stand-in sounds when ElevenLabs isn't configured yet."""
+    """Our own synthesized stand-ins, used while ElevenLabs is paused (owner, 2026-11-05)."""
     from . import audio
     if name in audio.SFX:
         return audio.SFX[name]().astype(np.float32) * 0.6
+    low = name.lower()
+    if any(k in low for k in ("blast", "hiss", "air", "steam")):
+        return (audio.hiss(0.7) * 0.9).astype(np.float32)
+    if any(k in low for k in ("pass", "roll", "rumble", "road", "tyre", "tire")):
+        rng = np.random.default_rng(3)
+        n = int(3.0 * SR)
+        x = audio.lp(rng.standard_normal(n), 400) * np.sin(np.pi * np.arange(n) / n) ** 2
+        return (x / (np.abs(x).max() + 1e-9) * 0.7).astype(np.float32)
+    if not any(k in low for k in ("bark", "jake", "brake", "engine", "exhaust")):
+        return audio.whoosh(0.6, 2000, 300).astype(np.float32) * 0.5
     rng = np.random.default_rng(abs(hash(name)) % 2**32)
     n = int(1.5 * SR)
     x = np.zeros(n, np.float32)
