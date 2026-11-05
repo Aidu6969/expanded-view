@@ -170,3 +170,22 @@
   uuid: "-6360529846803019439"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-6360529846803019439
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: ev-fake-sound
+  date: 2026-11-06
+  platform: youtube
+  scheduled: "2026-11-06T10:00"
+  title: "Why electric cars make fake engine sounds (it's not for you) #ev #electriccar #cars"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-06-ev-fake-sound.mp4
+  metricool_id: 418027792
+  uuid: "-8197212653964541036"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-8197212653964541036
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: ev-fake-sound
+  date: 2026-11-06
+  platform: tiktok
+  scheduled: "2026-11-06T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-06-ev-fake-sound.mp4
+  metricool_id: 418027842
+  uuid: "1123029256553254306"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=1123029256553254306
+  voice: kokoro am_michael (ElevenLabs paused by owner)
