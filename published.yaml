@@ -150,3 +150,23 @@
   uuid: "6120892775744358161"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=6120892775744358161
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: rb26
+  date: 2026-11-05
+  platform: youtube
+  scheduled: "2026-11-05T16:00"
+  title: "How the RB26 actually works: what the GT-R was hiding #rb26 #skyline #jdm"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-05-rb26-yt.mp4
+  metricool_id: 417508734
+  uuid: "5860787055395295013"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=5860787055395295013
+  yt_cut: true
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: rb26
+  date: 2026-11-05
+  platform: tiktok
+  scheduled: "2026-11-05T16:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-05-rb26.mp4
+  metricool_id: 417508767
+  uuid: "-6360529846803019439"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-6360529846803019439
+  voice: kokoro am_michael (ElevenLabs paused by owner)

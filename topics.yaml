@@ -61,7 +61,7 @@
 
 - slug: rb26
   topic: RB26
-  status: in_progress
+  status: scheduled
   note: "Built 2026-11-05 with the Kokoro voice (owner paused ElevenLabs). YouTube gets the 52 s cut (rule+size dropped)."
   angle: "\"Godzilla's heart.\" RB26DETT straight six: individual throttle bodies, twin parallel turbos, iron block; why inline sixes are naturally balanced (primary and secondary forces cancel)."
 
