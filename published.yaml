@@ -131,3 +131,22 @@
   metricool_id: 414325997
   uuid: "2059708777946432202"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=2059708777946432202
+- slug: jake-brake
+  date: 2026-11-05
+  platform: youtube
+  scheduled: "2026-11-05T10:00"
+  title: "Why trucks sound like machine guns downhill: how a Jake brake works #trucks #jakebrake #engineering"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-05-jake-brake.mp4
+  metricool_id: 417298042
+  uuid: "6518034141398911071"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=6518034141398911071
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: jake-brake
+  date: 2026-11-05
+  platform: tiktok
+  scheduled: "2026-11-05T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-05-jake-brake.mp4
+  metricool_id: 417298050
+  uuid: "6120892775744358161"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=6120892775744358161
+  voice: kokoro am_michael (ElevenLabs paused by owner)
