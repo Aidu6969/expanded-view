@@ -67,7 +67,8 @@
 
 - slug: ev-fake-sound
   topic: FAKE ENGINE SOUND
-  status: queued
+  status: in_progress
+  note: "Built 2026-11-05 with the Kokoro voice (ElevenLabs paused); all SFX synthesized in scene.py."
   angle: "\"Your electric car is making that noise on purpose.\" Silent EVs are a hazard at walking speed, so rules require a warning sound at low speed (verify: US FMVSS 141, EU AVAS, speeds). Speaker behind the bumper; some performance EVs synthesize engine/shift sounds from motor speed and throttle. Topical (EV supercar sound debates). Verify every regulation number; no brand recordings, synthesize/describe."
 
 - slug: fuel-gauge
