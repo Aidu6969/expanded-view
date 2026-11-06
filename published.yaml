@@ -189,3 +189,23 @@
   uuid: "1123029256553254306"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=1123029256553254306
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: fuel-gauge
+  date: 2026-11-06
+  platform: youtube
+  scheduled: "2026-11-06T16:00"
+  title: "Your fuel gauge is lying to you (on purpose): how a fuel gauge works #cars #fuelgauge #howitworks"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-06-fuel-gauge-yt.mp4
+  metricool_id: 418706963
+  uuid: "-5282001827036446548"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-5282001827036446548
+  yt_cut: true
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: fuel-gauge
+  date: 2026-11-06
+  platform: tiktok
+  scheduled: "2026-11-06T16:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-06-fuel-gauge.mp4
+  metricool_id: 418706990
+  uuid: "3748325712597238655"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3748325712597238655
+  voice: kokoro am_michael (ElevenLabs paused by owner)
