@@ -73,7 +73,8 @@
 
 - slug: fuel-gauge
   topic: FUEL GAUGE
-  status: queued
+  status: in_progress
+  note: "Built 2026-11-06 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. YouTube gets the 55 s cut (how+slosh dropped)."
   angle: "\"Your fuel gauge is lying to you, on purpose.\" Float + variable resistor sender; damping; why it sits on full."
 
 - slug: adaptive-headlights
