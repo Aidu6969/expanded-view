@@ -209,3 +209,22 @@
   uuid: "3748325712597238655"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3748325712597238655
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: adaptive-headlights
+  date: 2026-11-07
+  platform: youtube
+  scheduled: "2026-11-07T10:00"
+  title: "How matrix headlights work: high beams that don't blind anyone #cars #headlights #howitworks"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-07-adaptive-headlights.mp4
+  metricool_id: 419211579
+  uuid: "-2185856304705748564"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-2185856304705748564
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: adaptive-headlights
+  date: 2026-11-07
+  platform: tiktok
+  scheduled: "2026-11-07T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-07-adaptive-headlights.mp4
+  metricool_id: 419211599
+  uuid: "-7458168713997497663"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-7458168713997497663
+  voice: kokoro am_michael (ElevenLabs paused by owner)

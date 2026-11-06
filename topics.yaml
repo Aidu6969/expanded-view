@@ -79,7 +79,8 @@
 
 - slug: adaptive-headlights
   topic: MATRIX HEADLIGHTS
-  status: in_progress
+  status: scheduled
+  note: "Built 2026-11-06 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. Full 75 s video on both platforms."
   angle: "\"Headlights that dodge other drivers' eyes.\" Matrix/adaptive driving beam: a camera finds oncoming cars and the lamp switches off only the LED segments that would hit them, keeping high beams everywhere else. Verify: how many segments, US NHTSA rule allowing ADB (2022), why new LED headlights still dazzle (aim, taller vehicles, colour). (Competitor proof: headlights video ~1.5M.)"
 
 - slug: rotary-13b
