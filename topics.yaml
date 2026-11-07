@@ -85,7 +85,7 @@
 
 - slug: rotary-13b
   topic: THE ROTARY
-  status: in_progress
+  status: scheduled
   note: "Built 2026-11-07 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. YouTube gets the 58 s cut (problem+gears dropped)."
   angle: "\"An engine with no pistons that revs to the moon.\" Mazda 13B: triangular rotor, eccentric shaft turns 3x per rotor turn, three chambers, apex seals (why they wear), why it sounds like a buzzsaw."
 

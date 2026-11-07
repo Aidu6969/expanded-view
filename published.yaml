@@ -228,3 +228,23 @@
   uuid: "-7458168713997497663"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-7458168713997497663
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: rotary-13b
+  date: 2026-11-07
+  platform: youtube
+  scheduled: "2026-11-07T16:00"
+  title: "How a rotary engine works: so where are the valves? #rotary #mazda #jdm"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-07-rotary-13b_yt.mp4
+  metricool_id: 419804114
+  uuid: "-4766148057956006121"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-4766148057956006121
+  yt_cut: true
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: rotary-13b
+  date: 2026-11-07
+  platform: tiktok
+  scheduled: "2026-11-07T16:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-07-rotary-13b.mp4
+  metricool_id: 419804130
+  uuid: "-8633719339925683443"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-8633719339925683443
+  voice: kokoro am_michael (ElevenLabs paused by owner)
