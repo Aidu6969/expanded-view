@@ -91,7 +91,8 @@
 
 - slug: keyless-entry
   topic: KEYLESS ENTRY
-  status: queued
+  status: in_progress
+  note: "Built 2026-11-07 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. Full 75 s video on both platforms."
   angle: "\"How your car knows the key is in your pocket, and not on the roof.\" Passive keyless entry: car sends a low-frequency wake-up from antennas in the doors/cabin (short range), the fob answers by radio (UHF) with a cryptographic reply; antenna range decides inside vs outside. Relay attacks extend that range; motion-sensing fobs stop them. Verify frequencies and ranges."
 
 - slug: turbo-flutter
