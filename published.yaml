@@ -248,3 +248,22 @@
   uuid: "-8633719339925683443"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-8633719339925683443
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: keyless-entry
+  date: 2026-11-08
+  platform: youtube
+  scheduled: "2026-11-08T10:00"
+  title: "How keyless entry works: how your car knows where your key is #cars #keyfob #howitworks"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-keyless-entry.mp4
+  metricool_id: 420119744
+  uuid: "3113924954994196946"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3113924954994196946
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: keyless-entry
+  date: 2026-11-08
+  platform: tiktok
+  scheduled: "2026-11-08T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-keyless-entry.mp4
+  metricool_id: 420119755
+  uuid: "6913791031679337434"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=6913791031679337434
+  voice: kokoro am_michael (ElevenLabs paused by owner)
