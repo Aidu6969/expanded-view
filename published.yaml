@@ -256,6 +256,7 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-keyless-entry.mp4
   metricool_id: 420119744
   uuid: "3113924954994196946"
+  status: failed (Metricool "You have reached your Metricool account limit", 2026-11-08; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3113924954994196946
   voice: kokoro am_michael (ElevenLabs paused by owner)
 - slug: keyless-entry
@@ -265,6 +266,7 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-keyless-entry.mp4
   metricool_id: 420119755
   uuid: "6913791031679337434"
+  status: failed (Metricool "You have reached your Metricool account limit", 2026-11-08; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=6913791031679337434
   voice: kokoro am_michael (ElevenLabs paused by owner)
 - slug: turbo-flutter

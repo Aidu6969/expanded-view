@@ -103,7 +103,8 @@
 
 - slug: boxer-rumble
   topic: BOXER RUMBLE
-  status: queued
+  status: ready
+  note: "Built 2026-11-08 with the Kokoro voice (ElevenLabs paused); SFX and the rumble synthesized in scene.py. Full 73 s video on both platforms (odd episode, no YouTube cut). NOT scheduled: Metricool free plan limit reached (20 November posts). Post it once the limit is lifted."
   angle: "\"Why old Subarus burble.\" Flat-four boxer with unequal-length exhaust headers: exhaust pulses arrive unevenly -> the rumble; equal-length headers on newer cars removed it."
 
 - slug: abs
