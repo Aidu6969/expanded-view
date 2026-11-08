@@ -97,7 +97,8 @@
 
 - slug: turbo-flutter
   topic: TURBO FLUTTER
-  status: in_progress
+  status: scheduled
+  note: "Built 2026-11-08 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. YouTube gets the 59 s cut (surge + harm beats dropped), TikTok the full 74 s."
   angle: "\"What is that stutututu?\" Throttle snaps shut, boosted air has nowhere to go, it surges back through the compressor wheel (compressor surge); vs a blow-off valve's pssh."
 
 - slug: boxer-rumble

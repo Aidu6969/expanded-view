@@ -267,3 +267,23 @@
   uuid: "6913791031679337434"
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=6913791031679337434
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: turbo-flutter
+  date: 2026-11-08
+  platform: youtube
+  scheduled: "2026-11-08T16:00"
+  title: "What is turbo flutter? The stutututu sound explained #turbo #cars #howitworks"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-turbo-flutter-yt.mp4
+  metricool_id: 420594043
+  uuid: "5888916782813890109"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=5888916782813890109
+  yt_cut: true
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: turbo-flutter
+  date: 2026-11-08
+  platform: tiktok
+  scheduled: "2026-11-08T16:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-turbo-flutter.mp4
+  metricool_id: 420594056
+  uuid: "3785346753110559671"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3785346753110559671
+  voice: kokoro am_michael (ElevenLabs paused by owner)
