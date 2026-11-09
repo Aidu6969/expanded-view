@@ -277,6 +277,7 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-turbo-flutter-yt.mp4
   metricool_id: 420594043
   uuid: "5888916782813890109"
+  status: failed (Metricool "You have reached your Metricool account limit", 2026-11-08; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=5888916782813890109
   yt_cut: true
   voice: kokoro am_michael (ElevenLabs paused by owner)
@@ -287,5 +288,6 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-08-turbo-flutter.mp4
   metricool_id: 420594056
   uuid: "3785346753110559671"
+  status: failed (Metricool "You have reached your Metricool account limit", 2026-11-08; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3785346753110559671
   voice: kokoro am_michael (ElevenLabs paused by owner)
