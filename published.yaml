@@ -299,6 +299,7 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-11-boxer-rumble.mp4
   metricool_id: 424173362
   uuid: "5288326385042738274"
+  status: failed (Metricool "You have reached your Metricool account limit", 2026-11-11; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=5288326385042738274
   voice: kokoro am_michael (ElevenLabs paused by owner)
 - slug: boxer-rumble
@@ -308,5 +309,6 @@
   media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-11-boxer-rumble.mp4
   metricool_id: 424173615
   uuid: "-7552495719835350199"
+  status: failed (Metricool "You have reached your Metricool account limit", 2026-11-11; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-7552495719835350199
   voice: kokoro am_michael (ElevenLabs paused by owner)

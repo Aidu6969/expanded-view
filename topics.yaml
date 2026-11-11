@@ -104,7 +104,7 @@
 - slug: boxer-rumble
   topic: BOXER RUMBLE
   status: scheduled
-  note: "Built 2026-11-08 with the Kokoro voice (ElevenLabs paused); SFX and the rumble synthesized in scene.py. Full 73 s video on both platforms. Scheduled 2026-11-11 10:00 NY (Metricool accepted both posts; earlier November posts failed at publish time with 'account limit', so check it went live)."
+  note: "Built 2026-11-08 with the Kokoro voice (ElevenLabs paused); SFX and the rumble synthesized in scene.py. Full 73 s video on both platforms. Scheduled 2026-11-11 10:00 NY; both posts FAILED at publish time with Metricool 'account limit' (checked 2026-11-11 12:15 NY). Needs re-posting."
   angle: "\"Why old Subarus burble.\" Flat-four boxer with unequal-length exhaust headers: exhaust pulses arrive unevenly -> the rumble; equal-length headers on newer cars removed it."
 
 - slug: abs
@@ -115,7 +115,8 @@
 
 - slug: flatplane-vs-crossplane
   topic: FLAT PLANE
-  status: queued
+  status: ready
+  note: "Built 2026-11-11 with the Kokoro voice (ElevenLabs paused); engine notes synthesized in scene.py from the firing model. Full 71 s video on both platforms (18th episode, even count: YouTube cut optional). NOT scheduled: Metricool 'account limit' still failing every post (boxer rumble 2026-11-11 10:00 failed too). Post once the limit is lifted."
   angle: "\"Why a Ferrari V8 screams and an American V8 burbles.\" Cross-plane crank (90-degree throws, uneven firing per bank) vs flat-plane (180, even alternation per bank). Same cylinder count, different sound."
 
 - slug: tpms
