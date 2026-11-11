@@ -291,3 +291,22 @@
   status: failed (Metricool "You have reached your Metricool account limit", 2026-11-08; never went live, needs re-posting)
   plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=3785346753110559671
   voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: boxer-rumble
+  date: 2026-11-11
+  platform: youtube
+  scheduled: "2026-11-11T10:00"
+  title: "Why Subarus rumble: the boxer rumble explained #subaru #wrx #boxer"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-11-boxer-rumble.mp4
+  metricool_id: 424173362
+  uuid: "5288326385042738274"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=5288326385042738274
+  voice: kokoro am_michael (ElevenLabs paused by owner)
+- slug: boxer-rumble
+  date: 2026-11-11
+  platform: tiktok
+  scheduled: "2026-11-11T10:00"
+  media: https://raw.githubusercontent.com/Aidu6969/expanded-view/media/2026-11-11-boxer-rumble.mp4
+  metricool_id: 424173615
+  uuid: "-7552495719835350199"
+  plannerUrl: https://app.metricool.com/planner/calendar?blogId=7744824&openWithPostUuid=-7552495719835350199
+  voice: kokoro am_michael (ElevenLabs paused by owner)
