@@ -121,7 +121,8 @@
 
 - slug: tpms
   topic: TIRE PRESSURE
-  status: queued
+  status: ready
+  note: "Built 2026-11-12 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. Full 74.5 s video on both platforms (19th episode, odd: no YouTube cut). NOT scheduled: Metricool free-plan post limit still reached for November (every post since Nov 8 failed with 'account limit'). Post once the limit is lifted."
   angle: "\"How your car knows one tire is low.\" Direct TPMS: a battery sensor on the valve stem radios pressure. Indirect TPMS: no sensor at all, ABS wheel-speed sensors notice a soft tire spinning faster (smaller rolling radius). Verify US TREAD Act (2007 models) and the 25% warning threshold."
 
 - slug: anti-lag
