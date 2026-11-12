@@ -110,7 +110,7 @@
 - slug: abs
   topic: ABS
   status: ready
-  note: "Built 2026-11-10 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. Full 69 s video on both platforms (17th episode, odd: no YouTube cut). NOT scheduled: Metricool free plan limit still reached (November posts still failing with 'account limit'). Post it once the limit is lifted."
+  note: "Built 2026-11-10 with the Kokoro voice (ElevenLabs paused); SFX synthesized in scene.py. Full 69 s video on both platforms (17th episode, odd: no YouTube cut). NOT scheduled: Metricool free plan limit still reached (November posts still failing with 'account limit'). Post it once the limit is lifted. 2026-11-12 run: still blocked (boxer rumble posts show ERROR account limit; YouTube direct upload not configured), so no new episode built; ABS stays first in line."
   angle: "\"Slamming the brakes used to be the worst thing you could do.\" Wheel speed sensors, modulator valves pulsing pressure, steering control."
 
 - slug: flatplane-vs-crossplane
